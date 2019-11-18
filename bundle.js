@@ -1,6 +1,50 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 	};
+/******/
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"main": 0
+/******/ 	};
+/******/
+/******/
+/******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "" + chunkId + ".bundle.js"
+/******/ 	}
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -26,6 +70,67 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		var promises = [];
+/******/
+/******/
+/******/ 		// JSONP chunk loading for javascript
+/******/
+/******/ 		var installedChunkData = installedChunks[chunkId];
+/******/ 		if(installedChunkData !== 0) { // 0 means "already installed".
+/******/
+/******/ 			// a Promise means "currently loading".
+/******/ 			if(installedChunkData) {
+/******/ 				promises.push(installedChunkData[2]);
+/******/ 			} else {
+/******/ 				// setup Promise in chunk cache
+/******/ 				var promise = new Promise(function(resolve, reject) {
+/******/ 					installedChunkData = installedChunks[chunkId] = [resolve, reject];
+/******/ 				});
+/******/ 				promises.push(installedChunkData[2] = promise);
+/******/
+/******/ 				// start chunk loading
+/******/ 				var script = document.createElement('script');
+/******/ 				var onScriptComplete;
+/******/
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.src = jsonpScriptSrc(chunkId);
+/******/
+/******/ 				// create error before stack unwound to get useful stacktrace later
+/******/ 				var error = new Error();
+/******/ 				onScriptComplete = function (event) {
+/******/ 					// avoid mem leaks in IE.
+/******/ 					script.onerror = script.onload = null;
+/******/ 					clearTimeout(timeout);
+/******/ 					var chunk = installedChunks[chunkId];
+/******/ 					if(chunk !== 0) {
+/******/ 						if(chunk) {
+/******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 							var realSrc = event && event.target && event.target.src;
+/******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 							error.name = 'ChunkLoadError';
+/******/ 							error.type = errorType;
+/******/ 							error.request = realSrc;
+/******/ 							chunk[1](error);
+/******/ 						}
+/******/ 						installedChunks[chunkId] = undefined;
+/******/ 					}
+/******/ 				};
+/******/ 				var timeout = setTimeout(function(){
+/******/ 					onScriptComplete({ type: 'timeout', target: script });
+/******/ 				}, 120000);
+/******/ 				script.onerror = script.onload = onScriptComplete;
+/******/ 				document.head.appendChild(script);
+/******/ 			}
+/******/ 		}
+/******/ 		return Promise.all(promises);
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -78,6 +183,16 @@
 /******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -69849,758 +69964,6 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./src/assets/1000eng.js":
-/*!*******************************!*\
-  !*** ./src/assets/1000eng.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  list: [{
-    a: "ability",
-    q: "zdolność, umiejętność"
-  }, {
-    a: "able",
-    q: "zdolny, utalentowany"
-  }, {
-    a: "about",
-    q: "o (kimś/czymś)"
-  }, {
-    a: "above",
-    q: "powyżej, przeszło"
-  }, {
-    a: "accept",
-    q: "zaakceptować, przyjąć"
-  }, {
-    a: "according",
-    q: "według, zgodnie"
-  }, {
-    a: "account",
-    q: "konto, rachunek"
-  }, {
-    a: "across",
-    q: "przez, poprzez, poprzecznie, wszerz"
-  }, {
-    a: "act",
-    q: "działać, czyn, akt, ustawa"
-  }, {
-    a: "action",
-    q: "akcja działanie"
-  }, {
-    a: "activity",
-    q: "czynność, działalność"
-  }, {
-    a: "actually",
-    q: "tak właściwie, rzeczywiście"
-  }, {
-    a: "add",
-    q: "dodaj, dodawać"
-  }, {
-    a: "address",
-    q: "adres"
-  }, {
-    a: "administration",
-    q: "administracja, podawanie"
-  }, {
-    a: "admit",
-    q: "przyznać"
-  }, {
-    a: "adult",
-    q: "dorosły"
-  }, {
-    a: "affect",
-    q: "oddziaływać, wpłynąć"
-  }, {
-    a: "after",
-    q: "po, po kimś"
-  }, {
-    a: "again",
-    q: "jeszcze raz, znowu"
-  }, {
-    a: "against",
-    q: "przeciwko"
-  }, {
-    a: "age",
-    q: "wiek"
-  }, {
-    a: "agency",
-    q: "agencja, biuro"
-  }, {
-    a: "agent",
-    q: "agent"
-  }, {
-    a: "ago",
-    q: "temu, wstecz, przed"
-  }, {
-    a: "agree",
-    q: "zgodzić się, uzgodnić"
-  }, {
-    a: "agreement",
-    q: "umowa, porozumienie"
-  }, {
-    a: "ahead",
-    q: "przed siebie, na przodzie"
-  }, {
-    a: "air",
-    q: "powietrze"
-  }, {
-    a: "all",
-    q: "wszystko"
-  }, {
-    a: "allow",
-    q: "dopuszczać"
-  }, {
-    a: "almost",
-    q: "prawie, niemal"
-  }, {
-    a: "alone",
-    q: "sam"
-  }, {
-    a: "along",
-    q: "wzdłuż"
-  }, {
-    a: "check",
-    q: "sprawdzić, szach, czek bankowy"
-  }, {
-    a: "child",
-    q: "dziecko"
-  }, {
-    a: "choice",
-    q: "wybór"
-  }, {
-    a: "choose",
-    q: "wybierać"
-  }, {
-    a: "church",
-    q: "kościół"
-  }, {
-    a: "citizen",
-    q: "obywatel"
-  }, {
-    a: "city",
-    q: "miasto"
-  }, {
-    a: "civil",
-    q: "cywilny, obywatelski, przyzwoity"
-  }, {
-    a: "claim",
-    q: "roszczenie"
-  }, {
-    a: "class",
-    q: "klasa"
-  }, {
-    a: "clear",
-    q: "jasny, przejaśniać"
-  }, {
-    a: "clearly",
-    q: "wyraźnie, jasno"
-  }, {
-    a: "close",
-    q: "blisko, zamknąć"
-  }, {
-    a: "coach",
-    q: "trener, autobus duży"
-  }, {
-    a: "cold",
-    q: "zimno"
-  }, {
-    a: "collection",
-    q: "kolekcja"
-  }, {
-    a: "college",
-    q: "szkoła wyższa, uczelnia"
-  }, {
-    a: "color",
-    q: "kolor, barwa"
-  }, {
-    a: "come",
-    q: "chodź!, przyjść"
-  }, {
-    a: "commercial",
-    q: "reklama w tv, komercyjny, handlowy"
-  }, {
-    a: "common",
-    q: "wspólny, powszechny, pospolity"
-  }, {
-    a: "community",
-    q: "społeczność, wspólnota"
-  }, {
-    a: "company",
-    q: "firma, spółka"
-  }, {
-    a: "compare",
-    q: "porównać, przyrównać"
-  }, {
-    a: "computer",
-    q: "komputer"
-  }, {
-    a: "concern",
-    q: "sprawa, dotyczyć, zmartwienie"
-  }, {
-    a: "condition",
-    q: "stan, warunek"
-  }, {
-    a: "conference",
-    q: "konferencja"
-  }, {
-    a: "congress",
-    q: "kongres"
-  }, {
-    a: "consider",
-    q: "rozważać, rozpatrywać"
-  }, {
-    a: "consumer",
-    q: "konsument"
-  }, {
-    a: "contain",
-    q: "zawierać"
-  }, {
-    a: "continue",
-    q: "dalej, kontynuować"
-  }]
-});
-
-/***/ }),
-
-/***/ "./src/components/1000Words/AnswerArchive.jsx":
-/*!****************************************************!*\
-  !*** ./src/components/1000Words/AnswerArchive.jsx ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin-top: 20px;\n  list-style-type: none;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-var ListStyled = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].ul(_templateObject());
-
-var AnswerArchive = function AnswerArchive(_ref) {
-  var archive = _ref.archive;
-  return archive && archive.length > 0 && console.log(archive) || react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    style: {
-      width: "80%",
-      margin: "50px auto 0"
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Archive")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ListStyled, null, archive.length > 0 && archive.map(function (_ref2, idx) {
-    var _ref2$item = _ref2.item,
-        answer = _ref2$item.a,
-        question = _ref2$item.q,
-        wasCorrect = _ref2.wasCorrect,
-        value = _ref2.value;
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      key: answer + question,
-      style: {
-        color: wasCorrect ? "green" : "red"
-      }
-    }, answer, " - ", question, " - ", value || "/");
-  })));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (AnswerArchive);
-
-/***/ }),
-
-/***/ "./src/components/1000Words/GameController.jsx":
-/*!*****************************************************!*\
-  !*** ./src/components/1000Words/GameController.jsx ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Renderer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Renderer */ "./src/components/1000Words/Renderer.jsx");
-/* harmony import */ var _assets_1000eng__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/assets/1000eng */ "./src/assets/1000eng.js");
-/* harmony import */ var _AnswerArchive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AnswerArchive */ "./src/components/1000Words/AnswerArchive.jsx");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
-/* harmony import */ var _utils_converters__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/utils/converters */ "./src/utils/converters.js");
-/* harmony import */ var styled_system__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-system */ "./node_modules/styled-system/dist/index.esm.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
- // import data from "~/assets/colors";
-
-
-
-
-
-var maxLength = _assets_1000eng__WEBPACK_IMPORTED_MODULE_2__["default"].list.reduce(function (acc, _ref) {
-  var item = _ref.a;
-  return Math.max(acc, item.length);
-}, 0);
-window.l = _assets_1000eng__WEBPACK_IMPORTED_MODULE_2__["default"].list;
-
-var areEqual = function areEqual(a, b) {
-  return a.trim().toLowerCase() === b.trim().toLowerCase();
-};
-
-var getRecognizedText = function getRecognizedText(evt) {
-  var last = evt.results.length - 1;
-  return evt.results[last][0].transcript;
-};
-
-var GameController =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(GameController, _React$PureComponent);
-
-  function GameController(props) {
-    var _this;
-
-    _classCallCheck(this, GameController);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(GameController).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "componentDidMount", function () {
-      return _this.handleHit();
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "handleHit", function () {
-      return _this.pushToMemStack(true);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "giveUp", function () {
-      return _this.pushToMemStack(false);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "pushToMemStack", function (wasCorrect) {
-      if (_this.state.currentIdx >= 0) {
-        var prev = _this.state.list[_this.state.currentIdx];
-
-        _this.state.memStack.unshift({
-          item: prev,
-          wasCorrect: wasCorrect,
-          value: _this.state.value
-        });
-      }
-
-      if (_this.state.currentIdx + 1 >= _this.state.list.length) {
-        _this.setState({
-          done: true,
-          anyWasIncorrect: _this.state.anyWasIncorrect || !wasCorrect
-        });
-
-        return;
-      }
-
-      _this.setState(function (_ref2) {
-        var prevCurrent = _ref2.currentIdx;
-        var currentIdx = prevCurrent + 1;
-        var _this$state$list$curr = _this.state.list[currentIdx],
-            answer = _this$state$list$curr.a,
-            question = _this$state$list$curr.q; // console.log(this.state.anyWasIncorrect, !wasCorrect);
-
-        return {
-          answer: Object(_utils_converters__WEBPACK_IMPORTED_MODULE_5__["convertToAnswerFormat"])(answer),
-          currentIdx: currentIdx,
-          question: Object(_utils_converters__WEBPACK_IMPORTED_MODULE_5__["convertToQuestionFormat"])(question),
-          // question: convertToColorQuestionFormat(question),
-          shouldApplyMask: false,
-          value: "",
-          anyWasIncorrect: _this.state.anyWasIncorrect || !wasCorrect
-        };
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "handleKeyUp", function (evt, fromVoice, recognition) {
-      var value = fromVoice ? getRecognizedText(evt) : evt.target.value;
-      var equal = value && areEqual(value, _this.state.answer.value);
-
-      if (fromVoice && equal) {
-        _this.handleHit();
-      } else if (!fromVoice && evt.key === 'Escape') {
-        return _this.giveUp();
-      } else if (!fromVoice && evt.key === 'Enter') {
-        console.log(value, _this.state.answer.value);
-
-        _this.pushToMemStack(equal);
-      } else {
-        _this.setState({
-          value: value
-        });
-      } // if (this.state.shouldApplyMask) {
-      //   value = this.applyMaskToValue(value);
-      // }
-
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "showFirstLetter", function () {
-      if (_this.state.value.length < 1) {
-        console.log(_this.state.answer.value);
-
-        _this.setState({
-          value: _this.state.answer.value.charAt(0).toUpperCase() + _this.state.value.substring(1)
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "applyMask", function () {
-      _this.setState({
-        shouldApplyMask: true,
-        value: _this.applyMaskToValue(_this.state.value)
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "checkSpelling", function () {});
-
-    _defineProperty(_assertThisInitialized(_this), "reload", function () {
-      _this.setState({
-        done: false,
-        currentIdx: -1,
-        memStack: [],
-        list: _assets_1000eng__WEBPACK_IMPORTED_MODULE_2__["default"].list
-      }, _this.handleHit);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "continueWithIncorrect", function () {
-      _this.setState({
-        list: _this.state.memStack.reduce(function (acc, _ref3) {
-          var value = _ref3.value,
-              wasCorrect = _ref3.wasCorrect;
-          return !wasCorrect ? acc.concat(value) : acc;
-        }, []),
-        done: false,
-        currentIdx: -1,
-        memStack: _this.state.memStack.filter(function (_ref4) {
-          var wasCorrect = _ref4.wasCorrect;
-          return wasCorrect;
-        }),
-        anyWasIncorrect: false
-      }, _this.handleHit);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "render", function () {
-      return _this.state.question && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, _this.state.done && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: {
-          textAlign: "center"
-        }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_4__["Heading"], {
-        style: {
-          display: "inline",
-          lineHeight: "80px",
-          marginRight: "20px"
-        }
-      }, "Done!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_4__["Button"], {
-        style: {
-          verticalAlign: "super"
-        },
-        onClick: _this.reload,
-        variantColor: "teal",
-        size: "md"
-      }, "Reload"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_4__["Button"], {
-        style: {
-          verticalAlign: "super"
-        },
-        onClick: _this.continueWithIncorrect,
-        variantColor: "teal",
-        size: "md",
-        disabled: !_this.state.anyWasIncorrect
-      }, "Go through incorrect")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Renderer__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        question: _this.state.question,
-        answer: _this.state.answer,
-        handleKeyUp: _this.handleKeyUp,
-        value: _this.state.value,
-        shouldApplyMask: _this.state.shouldApplyMask,
-        isDone: _this.state.done,
-        hintConfig: [{
-          label: "First Letter",
-          disabled: _this.state.answer.value.charAt(0).toLowerCase() === _this.state.value.charAt(0).toLowerCase(),
-          callback: _this.showFirstLetter
-        }, {
-          label: "Apply Mask",
-          disabled: true,
-          callback: _this.applyMask
-        }, {
-          label: "Check Spelling",
-          disabled: true,
-          callback: _this.checkSpelling
-        }, {
-          label: "Give up",
-          disabled: false,
-          callback: _this.giveUp,
-          variantColor: "red"
-        }]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AnswerArchive__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        archive: _this.state.memStack
-      }));
-    });
-
-    _this.maxLength = maxLength;
-    _this.state = {
-      answer: null,
-      currentIdx: -1,
-      done: false,
-      question: null,
-      shouldApplyMask: false,
-      value: "",
-      memStack: [],
-      anyWasIncorrect: false,
-      list: _assets_1000eng__WEBPACK_IMPORTED_MODULE_2__["default"].list
-    };
-    return _this;
-  }
-
-  return GameController;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
-
-/* harmony default export */ __webpack_exports__["default"] = (GameController);
-
-/***/ }),
-
-/***/ "./src/components/1000Words/Renderer.jsx":
-/*!***********************************************!*\
-  !*** ./src/components/1000Words/Renderer.jsx ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
-/* harmony import */ var components_SpeachRecognition__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/SpeachRecognition */ "./src/components/SpeachRecognition/index.jsx");
-/* harmony import */ var components_SpeachSynthesis__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SpeachSynthesis */ "./src/components/SpeachSynthesis/index.jsx");
-/* harmony import */ var components_Renderers_QuestionRenderer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/Renderers/QuestionRenderer */ "./src/components/Renderers/QuestionRenderer.jsx");
-/* harmony import */ var _stylesComponents__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./stylesComponents */ "./src/components/1000Words/stylesComponents.jsx");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-
-function setCaretPosition(ctrl, pos) {
-  pos = pos || ctrl.value.length; // Modern browsers
-
-  if (ctrl.setSelectionRange) {
-    ctrl.focus();
-    ctrl.setSelectionRange(pos, pos); // IE8 and below
-  } else if (ctrl.createTextRange) {
-    var range = ctrl.createTextRange();
-    range.collapse(true);
-    range.moveEnd('character', pos);
-    range.moveStart('character', pos);
-    range.select();
-  }
-}
-
-var Renderer = function Renderer(_ref) {
-  var answer = _ref.answer,
-      isDone = _ref.isDone,
-      _ref$shouldApplyMask = _ref.shouldApplyMask,
-      shouldApplyMask = _ref$shouldApplyMask === void 0 ? false : _ref$shouldApplyMask,
-      handleKeyUp = _ref.handleKeyUp,
-      hintConfig = _ref.hintConfig,
-      maxLength = _ref.maxLength,
-      question = _ref.question,
-      _ref$shouldListen = _ref.shouldListen,
-      shouldListen = _ref$shouldListen === void 0 ? false : _ref$shouldListen,
-      _ref$shouldSpeak = _ref.shouldSpeak,
-      shouldSpeak = _ref$shouldSpeak === void 0 ? true : _ref$shouldSpeak,
-      value = _ref.value;
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      isListening = _React$useState2[0],
-      setIsListening = _React$useState2[1];
-
-  var inputRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.useRef(null);
-  react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(function () {
-    setCaretPosition(inputRef.current);
-  });
-
-  components_SpeachRecognition__WEBPACK_IMPORTED_MODULE_3__["recognition"].onresult = function (evt) {
-    return console.log(evt) || handleKeyUp(evt, true, components_SpeachRecognition__WEBPACK_IMPORTED_MODULE_3__["recognition"]);
-  };
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      width: "100%",
-      height: "100%",
-      display: "flex",
-      textAlign: "center",
-      alignItems: "center",
-      justifyContent: "center"
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: {
-      display: "block",
-      opacity: isDone ? .5 : 1
-    }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Renderers_QuestionRenderer__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    question: question,
-    answer: answer
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SpeachSynthesis__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    text: answer.value
-  }, function (_ref2) {
-    var speak = _ref2.speak;
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-      size: "sm",
-      disabled: isListening || isDone,
-      variantColor: "teal",
-      onClick: speak
-    }, "Play");
-  }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    disabled: isDone,
-    size: "sm",
-    variantColor: "teal",
-    onClick: function onClick() {
-      setIsListening(!isListening);
-      components_SpeachRecognition__WEBPACK_IMPORTED_MODULE_3__["recognition"][isListening ? "abort" : "start"]();
-    }
-  }, isListening ? "Stop" : "Listen"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_stylesComponents__WEBPACK_IMPORTED_MODULE_6__["InputStyled"], {
-    disabled: isDone,
-    maxLength: maxLength,
-    autoFocus: true,
-    onChange: handleKeyUp,
-    onKeyUp: handleKeyUp,
-    value: value,
-    shouldApplyMask: shouldApplyMask,
-    ref: inputRef
-  }), hintConfig && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_stylesComponents__WEBPACK_IMPORTED_MODULE_6__["Hints"], null, hintConfig.map(function (_ref3) {
-    var label = _ref3.label,
-        disabled = _ref3.disabled,
-        callback = _ref3.callback,
-        variantColor = _ref3.variantColor;
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-      key: label,
-      disabled: disabled || isDone,
-      variantColor: variantColor || "teal",
-      variant: "outline",
-      onClick: callback,
-      title: disabled ? "To be implemented" : ""
-    }, label);
-  })))));
-};
-
-Renderer.propTypes = {
-  answer: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
-  shouldApplyMask: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-  question: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
-  value: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-  shouldListen: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-  shouldSpeak: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-  gameTypeConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
-  hintConfig: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.array
-};
-/* harmony default export */ __webpack_exports__["default"] = (Renderer);
-
-/***/ }),
-
-/***/ "./src/components/1000Words/index.jsx":
-/*!********************************************!*\
-  !*** ./src/components/1000Words/index.jsx ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _GameController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GameController */ "./src/components/1000Words/GameController.jsx");
-
-
-/* harmony default export */ __webpack_exports__["default"] = (_GameController__WEBPACK_IMPORTED_MODULE_1__["default"]);
-
-/***/ }),
-
-/***/ "./src/components/1000Words/stylesComponents.jsx":
-/*!*******************************************************!*\
-  !*** ./src/components/1000Words/stylesComponents.jsx ***!
-  \*******************************************************/
-/*! exports provided: InputStyled, Hints */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputStyled", function() { return InputStyled; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hints", function() { return Hints; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  margin-top: 40px;\n\n  & > * + * {\n    margin-left: 10px;\n  }\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  padding: 10px;\n  border: 0;\n  outline: 0;\n  font-size: 200%;\n  text-align: center;\n  border-bottom: 1px solid #999;\n  margin-top: 10px;\n  ", "\n\n  &:focus {\n    border-bottom: 1px dashed #999;\n    outline: 0;\n    background-color: ivory;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-var InputStyled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input(_templateObject(), function (props) {
-  return props.shouldApplyMask ? 'letter-spacing: 5px' : '';
-});
-var Hints = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].aside(_templateObject2());
-
-/***/ }),
-
 /***/ "./src/components/App/index.jsx":
 /*!**************************************!*\
   !*** ./src/components/App/index.jsx ***!
@@ -70614,34 +69977,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var components_1000Words___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/1000Words/ */ "./src/components/1000Words/index.jsx");
-/* harmony import */ var components_GlobalWrapper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/GlobalWrapper */ "./src/components/GlobalWrapper/index.jsx");
+/* harmony import */ var components_GlobalWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/GlobalWrapper */ "./src/components/GlobalWrapper/index.jsx");
+/* harmony import */ var components_common_Preloader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/common/Preloader */ "./src/components/common/Preloader.jsx");
 /* harmony import */ var _theme_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/theme/index */ "./src/theme/index.js");
 
 
 
 
- // import Preloader from "components/common/Preloader";
 
- // const LazyWords1000 = React.lazy(() => );
-// const LazyIrregularVerbs = React.lazy(() =>
-//   import("components/IrregularVerbs")
-// );
-// const Home = () => <h1>Welcome!</h1>;
+
+var Test = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
+  return Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! components/Test/ */ "./src/components/Test/index.jsx"));
+});
+var LazyWords1000 = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
+  return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! components/1000Words/ */ "./src/components/1000Words/index.jsx"));
+});
+var LazyIrregularVerbs = react__WEBPACK_IMPORTED_MODULE_0___default.a.lazy(function () {
+  return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! components/IrregularVerbs */ "./src/components/IrregularVerbs/index.jsx"));
+});
+
+var Home = function Home() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome!");
+};
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(styled_components__WEBPACK_IMPORTED_MODULE_1__["ThemeProvider"], {
     theme: _theme_index__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_theme_index__WEBPACK_IMPORTED_MODULE_5__["GlobalStyles"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_GlobalWrapper__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_theme_index__WEBPACK_IMPORTED_MODULE_5__["GlobalStyles"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_GlobalWrapper__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Suspense, {
+    fallback: components_common_Preloader__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
-    component: components_1000Words___WEBPACK_IMPORTED_MODULE_3__["default"]
+    exact: true,
+    component: Home
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/1000",
+    component: LazyWords1000
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/irregular",
+    component: LazyIrregularVerbs
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/test",
+    component: Test
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: function component() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
         to: "/"
       });
     }
-  })))));
+  }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -70669,10 +70052,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/Renderers/QuestionRenderer.jsx":
-/*!*******************************************************!*\
-  !*** ./src/components/Renderers/QuestionRenderer.jsx ***!
-  \*******************************************************/
+/***/ "./src/components/common/Overlay.jsx":
+/*!*******************************************!*\
+  !*** ./src/components/common/Overlay.jsx ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -70680,12 +70063,41 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  background-color: ", ";\n  height: 250px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid;\n  margin-bottom: 10px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0,0,0,.5);\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var Overlay = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+/* harmony default export */ __webpack_exports__["default"] = (Overlay);
+
+/***/ }),
+
+/***/ "./src/components/common/Preloader.jsx":
+/*!*********************************************!*\
+  !*** ./src/components/common/Preloader.jsx ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _Overlay__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Overlay */ "./src/components/common/Overlay.jsx");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  color: white;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -70699,210 +70111,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
-var ColoredHeaderStyled = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_3__["Heading"])(_templateObject(), function (props) {
-  return props.ansColor;
-});
-var renderers = {
-  string: function string(_ref) {
-    var value = _ref.question.value;
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_3__["Heading"], null, value);
-  },
-  color: function color(_ref2) {
-    var value = _ref2.question.value,
-        ansValue = _ref2.answer.value;
-    return console.log("asas", value) || react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ColoredHeaderStyled, {
-      ansColor: ansValue
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      style: {
-        color: ansValue === "gray" ? 'black' : ansValue,
-        filter: "invert(100%) contrast(10)"
-      }
-    }, value));
-  }
-};
-
-var QuestionRenderer = function QuestionRenderer(_ref3) {
-  var question = _ref3.question,
-      answer = _ref3.answer;
-  var TypeRenderer = renderers[question.type];
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TypeRenderer, {
-    question: question,
-    answer: answer
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (QuestionRenderer);
-
-/***/ }),
-
-/***/ "./src/components/SpeachRecognition/index.jsx":
-/*!****************************************************!*\
-  !*** ./src/components/SpeachRecognition/index.jsx ***!
-  \****************************************************/
-/*! exports provided: recognition, updateGrammar */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recognition", function() { return recognition; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateGrammar", function() { return updateGrammar; });
-var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-var SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList; // const SpeechRecognitionEvent = window.SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent
-
-var tmpWordList = 'condition|above|agency|after|ago|act|along|adult|across|administration|ability|agreement|civil|admit|check|clearly|church|contain|against|clear|compare|color|citizen|congress|consider|child|conference|come|choose|age|class|close|city|affect|all|common|cold|company|allow|coach|choice|computer|community|action|continue|accept|air|add|alone|actually|agree|almost|commercial|ahead|about|activity|able|according|claim|college|concern|account|collection|again|address|agent|consumer'.split("|");
-var speechRecognitionList;
-
-var updateGrammar = function updateGrammar() {
-  var wordList = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : tmpWordList;
-  var grammar = "#JSGF V1.0; grammar colors; public <color> = ".concat(wordList.join("|"), ";");
-  speechRecognitionList = new SpeechGrammarList();
-  speechRecognitionList.addFromString(grammar, 1);
-};
-
-var recognition = new SpeechRecognition();
-recognition.lang = 'en-US';
-recognition.interimResults = true;
-recognition.maxAlternatives = 1;
-recognition.continuous = true; // recognition.onresult = evt => {
-//   const last = evt.results.length - 1;
-//   const word = evt.results[last][0].transcript;
-// diagnostic.textContent = 'Result received: ' + color + '.';
-// bg.style.backgroundColor = color;
-//   console.log('Word:', word, 'Confidence: ' + evt.results[0][0].confidence);
-// }
-
-recognition.onstart = function () {
-  console.log('Voice recognition is ON.');
-};
-
-recognition.onspeechend = function () {
-  recognition.stop();
-  console.log('Speech has stopped being detected');
-};
-
-recognition.onnomatch = function (evt) {
-  console.log('I didnt recognise that color.');
-}; // recognition.onerror = evt => {
-//   if(event.error === 'no-speech') {
-//     console.log('Try again.');
-//   }
-// }
-
-
-window.r = recognition;
-
-
-/***/ }),
-
-/***/ "./src/components/SpeachSynthesis/index.jsx":
-/*!**************************************************!*\
-  !*** ./src/components/SpeachSynthesis/index.jsx ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-var config = {
-  voice: false
-}; // placeholder, TODO: provide global config with voice selections
-
-var SpeachSynthesis =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(SpeachSynthesis, _React$PureComponent);
-
-  function SpeachSynthesis(props) {
-    var _this;
-
-    _classCallCheck(this, SpeachSynthesis);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SpeachSynthesis).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "cancel", function () {
-      return _this.synth.cancel;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "pause", function () {
-      return _this.synth.pause;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "resume", function () {
-      return _this.synth.resume;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "speak", function () {
-      return _this.synth.speak;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "speak", function () {
-      var _this$props = _this.props,
-          text = _this$props.text,
-          pitch = _this$props.pitch,
-          rate = _this$props.rate,
-          voice = _this$props.voice,
-          volume = _this$props.volume;
-      _this.utterThis.text = text; // this.utterThis.voice = voice || config.voice || this.defaultVoice || null;
-      // this.utterThis.volume = volume;
-      // this.utterThis.rate = rate;
-      // this.utterThis.pitch = pitch;
-
-      _this.synth.speak(_this.utterThis);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "render", function () {
-      return _this.props.children(_defineProperty({
-        speak: _this.speak,
-        cancel: _this.cancel,
-        pause: _this.pause,
-        resume: _this.resume
-      }, "speak", _this.speak));
-    });
-
-    _this.synth = window.speechSynthesis;
-    _this.utterThis = new window.SpeechSynthesisUtterance("");
-    _this.voices = _this.synth.getVoices();
-    _this.defaultVoice = _this.voices[0] && _this.voices[0]["default"] ? _this.voices[0] : _this.voices.filter(function (_ref) {
-      var isDefault = _ref['default'];
-      return isDefault;
-    });
-    return _this;
-  }
-
-  return SpeachSynthesis;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.PureComponent);
-
-SpeachSynthesis.propTypes = {
-  text: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-  pitch: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
-  rate: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
-  voice: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
-  volume: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
-};
-/* harmony default export */ __webpack_exports__["default"] = (SpeachSynthesis);
+var PreloaderStyled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+var Preloader = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Overlay__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PreloaderStyled, null, "Loading..."));
+/* harmony default export */ __webpack_exports__["default"] = (Preloader);
 
 /***/ }),
 
@@ -70993,43 +70204,6 @@ var thame = {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (thame);
-
-/***/ }),
-
-/***/ "./src/utils/converters.js":
-/*!*********************************!*\
-  !*** ./src/utils/converters.js ***!
-  \*********************************/
-/*! exports provided: convertToQuestionFormat, convertToAnswerFormat, convertToColorQuestionFormat */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertToQuestionFormat", function() { return convertToQuestionFormat; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertToAnswerFormat", function() { return convertToAnswerFormat; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertToColorQuestionFormat", function() { return convertToColorQuestionFormat; });
-// const question = {
-//   type: "string", // default
-//   value: "",
-// }
-var convertToQuestionFormat = function convertToQuestionFormat(question) {
-  return {
-    type: "string",
-    value: question
-  };
-};
-var convertToAnswerFormat = function convertToAnswerFormat(answer) {
-  return {
-    type: "string",
-    value: answer
-  };
-};
-var convertToColorQuestionFormat = function convertToColorQuestionFormat(question) {
-  return {
-    type: "color",
-    value: question
-  };
-};
 
 /***/ })
 
