@@ -4354,6 +4354,912 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/assets/slownikTestera.js":
+/*!**************************************!*\
+  !*** ./src/assets/slownikTestera.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  list: [{
+    a: "aktor",
+    q: "Użytkownik lub dowolna inna osoba lub system, który wchodzi w określony sposób w interakcję z testowanym systemem."
+  }, {
+    a: "analiza ryzyka",
+    q: "Proces oceny zidentyfikowanych ryzyk mający na celu oszacowanie ich wpływu i prawdopodobieństwa ziszczenia się."
+  }, {
+    a: "analiza statyczna",
+    q: "Analiza artefaktów oprogramowania, np. wymagań bądź kodu programu przeprowadzona bez wykonywania tych artefaktów, Analiza ****** jest na ogół przeprowadzana przy pomocy narzędzi"
+  }, {
+    a: "analiza wartości brzegowych",
+    q: "Czarnoskrzynkowa technika projektowania przypadków testowych, w której przypadki te są projektowane w oparciu o wartości brzegowe."
+  }, {
+    a: "analiza wpływu",
+    q: "Oszacowanie zmiany w dokumentacji projektowej, testowej oraz zmian w modułach koniecznych do implementacji żądanej zmiany wg określonych wymagań."
+  }, {
+    a: "analizator statyczny kodu",
+    q: "Narzędzie wykonujące analizę statyczną kodu. Narzędzie takie sprawdza kod źródłowy pod względem pewnych właściwości, takich jak zgodność ze standardami kodowania, metryki jakości lub anomalie przepływu danych."
+  }, {
+    a: "atak",
+    q: "Ukierunkowane działanie mające na celu ocenę jakości, w szczególności niezawodności obiektu testów, poprzez wymuszanie wystąpienia określonej awarii."
+  }, {
+    a: "atrybut jakościowy",
+    q: "Cecha lub właściwość, która wpływa na jakość obiektu."
+  }, {
+    a: "automatyzacja testowania",
+    q: "Użycie oprogramowania do wykonania lub wspierania czynności testowych, np. zarządzania testami, projektowania testów, wykonania testów i sprawdzania wyników."
+  }, {
+    a: "awaria",
+    q: "Odchyłka modułu lub systemu od oczekiwanego zachowania lub rezultatu działania."
+  }, {
+    a: "bezpieczeństwo",
+    q: "Zdolność oprogramowania do osiągania akceptowalnych poziomów ryzyka wystąpienia szkody w stosunku do ludzi, biznesu, oprogramowania, majątku lub środowiska w określonym kontekście użycia. "
+  }, {
+    a: "białoskrzynkowe techniki projektowania testów",
+    q: "Procedura tworzenia i/ lub wybierania przypadków testowych oparta na analizie wewnętrznej struktury modułu lub systemu."
+  }, {
+    a: "błąd",
+    q: "Działanie człowieka powodujące powstanie nieprawidłowego rezultatu."
+  }, {
+    a: "cel testu",
+    q: "Przyczyna lub powód zaprojektowania i przeprowadzenia testu"
+  }, {
+    a: "certyfikacja",
+    q: "Proces potwierdzający, że moduł, system lub osoba spełnia określone wymagania. Certyfikat można uzyskać np. poprzez zdanie egzaminu."
+  }, {
+    a: "COTS",
+    q: "Akronim od ang. Commercial Off-The-Shelf Software. Patrz oprogramowanie z półki."
+  }, {
+    a: "cykl życia oprogramowania",
+    q: "Okres czasu rozpoczynający się, kiedy pojawi się pomysł na oprogramowanie i kończący się, gdy oprogramowanie nie jest już dostępne do użytku. Zazwyczaj cykl życia oprogramowania zawiera fazę koncepcji, fazę wymagań, fazę projektowania, fazę implementacji, fazę testów, fazę instalacji i zastępowania, fazę wykorzystania produkcyjnego i pielęgnowania oraz - czasami - fazę wycofania. Uwaga: te fazy mogą na siebie nachodzić lub mogą być wykonywane iteracyjnie."
+  }, {
+    a: "czarnoskrzynkowa technika projektowania przypadków testowych",
+    q: "Procedura wyprowadzająca i/lub wybierająca przypadki testowe w oparciu o analizę specyfikacji, funkcjonalnej lub niefunkcjonalnej, modułu lub systemu bez odniesienia do jego wewnętrznej struktury."
+  }, {
+    a: "dane testowe",
+    q: "Dane, które istnieją (przykładowo w bazie danych) przed wykonaniem testu, i które mają wpływ na testowany moduł lub system, lub na które wywiera wpływ testowany moduł lub system."
+  }, {
+    a: "dane wejściowe do testów",
+    q: "Dane otrzymywane z zewnętrznego źródła dostarczane do obiektu testów podczas wykonywania testu. Źródłem zewnętrznym może być sprzęt, oprogramowanie lub człowiek."
+  }, {
+    a: "debagowanie",
+    q: "Proces wyszukiwania, analizowania i usuwania przyczyn awarii oprogramowania."
+  }, {
+    a: "decyzja",
+    q: "Punkt w programie, w którym przepływ sterowania ma dwie lub więcej alternatywnych dróg. Węzeł grafu przepływu sterowania, z którego wychodzą dwie lub więcej gałęzi."
+  }, {
+    a: "defekt",
+    q: "Wada modułu lub systemu, która może spowodować, że moduł lub system nie wykona zakładanej czynności, np. niepoprawne wyrażenie lub definicja danych. Defekt, który wystąpi podczas uruchomienia programu, może spowodować awarię modułu lub systemu."
+  }, {
+    a: "diagram stanów",
+    q: "Diagram, który przedstawia stany, jakie moduł lub system może przyjąć oraz pokazuje zdarzenia lub okoliczności, które powodują zmiany stanów i/lub wynikają z tych zmian. "
+  }, {
+    a: "dziedzina",
+    q: "Zbiór, z którego wybierane są wartości wejścia lub wyjścia."
+  }, {
+    a: "efekt próbnika",
+    q: "Efekt wpływu elementu pomiarowego na moduł lub system podczas dokonywania pomiaru, np. poprzez narzędzie do testów wydajnościowych. Przykładowo wydajność testowanego oprogramowania może być nieznacznie gorsza, kiedy stosowane jest narzędzie do testów wydajnościowych."
+  }, {
+    a: "efekt testu",
+    q: "Zbiór kryteriów wyjścia."
+  }, {
+    a: "element testowy",
+    q: "Pojedynczy element, który należy przetestować. Na ogół jest jeden przedmiot testów i wiele elementów testowych."
+  }, {
+    a: "emulator",
+    q: "Urządzenie, program komputerowy lub system, który przyjmuje takie same wejścia i generuje takie same wyjścia jak dany system."
+  }, {
+    a: "faza testów",
+    q: "Wyróżniony zbiór aktywności testowych zebrany w podlegającą zarządzaniu fazę projektu, np. wykonanie testów na jakimś poziomie testów."
+  }, {
+    a: "faza wykonania testu",
+    q: "Okres w cyklu tworzenia oprogramowania, w trakcie którego są wykonywane moduły oprogramowania, a samo oprogramowanie jest oceniane w celu zdecydowania, czy wymagania zostały spełnione."
+  }, {
+    a: "faza wymagań",
+    q: "Przedział czasu w cyklu życia oprogramowania, podczas którego wymagania na oprogramowanie są zbierane i dokumentowane."
+  }, {
+    a: "funkcjonalność",
+    q: "Zdolność oprogramowania do zapewnienia funkcji odpowiadających zdefiniowanym i przewidywanym potrzebom, gdy oprogramowanie jest używane w określonych warunkach."
+  }, {
+    a: "gęstość usterek",
+    q: "Liczba usterek znalezionych w module lub systemie przypadająca na jednostkę wielkości modułu lub systemu (wyrażoną za pomocą standardowej miary oprogramowania, np. w liniach kodu, liczbie klas lub punktach funkcyjnych)."
+  }, {
+    a: "główny plan testów",
+    q: "Plan testów, który odnosi się do wielu poziomów testów. "
+  }, {
+    a: "harmonogram testów",
+    q: "Lista aktywności, zadań lub zdarzeń z procesu testowego, określająca ich zamierzoną datę rozpoczęcia i zakończenia i/lub czas realizacji oraz ich współzależności."
+  }, {
+    a: "harmonogram wykonania testu",
+    q: "Schemat wykonania procedur testowych. Uwaga! Procedury testowe są zawarte w harmonogramie wykonania testów, w ich kontekście i w kolejności, w jakiej mają być wykonane."
+  }, {
+    a: "hiperłącze",
+    q: "Wskaźnik w dokumencie elektronicznym, który stanowi odwołanie do innego dokumentu elektronicznego."
+  }, {
+    a: "historyjka użytkownika",
+    q: "Wysokopoziomowe wymaganie użytkownika lub wymaganie biznesowe, często używane w zwinnym wytwarzaniu oprogramowania, w typowych sytuacjach składające się z jednego lub więcej zdań w codziennym lub biznesowym języku, opisujące funkcjonalność potrzebną użytkownikowi, kryteria niefunkcjonalne oraz kryteria akceptacji."
+  }, {
+    a: "identyfikacja ryzyka",
+    q: "Proces identyfikacji ryzyk wykorzystujący takie techniki jak burza mózgów, listy kontrolne, historię awarii."
+  }, {
+    a: "implementacja testów",
+    q: "Proces projektowania i nadawania priorytetów procedurom testowym, tworzenie danych testowych i opcjonalnie, przygotowywania jarzma testowego, pisania automatycznych skryptów testowych, infrastruktury testowej: organizacyjnych artefaktów potrzebnych do wykonania testów składających się ze środowisk testowych, narzędzi testowych, wyposażenia biurowego i procedur postępowania; danych testowych: danych pozyskiwanych z zewnętrznych źródeł przez obiekty testowe podczas wykonywania testów. Zewnętrznym źródłem może być sprzęt, oprogramowanie lub człowiek."
+  }, {
+    a: "incydent",
+    q: "Każde zdarzenie wymagające zbadania."
+  }, {
+    a: "inspekcja",
+    q: "Rodzaj przeglądu koleżeńskiego polegający na wizualnej weryfikacji dokumentów w celu wykrycia defektów, np. niezgodności ze standardami projektowymi lub dokumentacją wyższego poziomu. Jest to najbardziej formalna technika przeglądu, zawsze oparta na udokumentowanej procedurze."
+  }, {
+    a: "instrukcja",
+    q: "Element języka programowania, który jest zwykle najmniejszą niepodzielną jednostką wykonania."
+  }, {
+    a: "instrukcja wykonywalna",
+    q: "Wyrażenie, które w trakcie kompilacji jest tłumaczone na kod binarny, i które będzie wykonywane proceduralnie podczas działania programu. Może ono wykonywać akcje na danych programu."
+  }, {
+    a: "integracja",
+    q: "Proces łączenia modułów lub systemów w większe zespoły."
+  }, {
+    a: "iteracyjny model wytwarzania",
+    q: "Metoda wytwarzania oprogramowania, w której projekt jest podzielony na dużą ilość iteracji. Iteracja stanowi zamknięty cykl wytwórczy dający w wyniku działającą wersję produktu (wewnętrzną lub zewnętrzną) będącą podzbiorem finalnego produktu, który rozrasta się z iteracji na iterację aż do powstania produktu końcowego."
+  }, {
+    a: "jakość",
+    q: "Stopień, w jakim moduł, system lub proces spełnia określone wymagania i/lub spełnia potrzeby i oczekiwania klienta lub użytkownika."
+  }, {
+    a: "jakość danych",
+    q: "Cecha danych, która pokazuje ich poprawność względem predefiniowanych kryteriów, np. wymagań biznesowych, wymagań na integralność danych, spójność danych."
+  }, {
+    a: "jakość oprogramowania",
+    q: "Ogół funkcjonalności i cech oprogramowania, które charakteryzują zdolność zaspokajania stwierdzonych lub przewidywanych potrzeb."
+  }, {
+    a: "jarzmo testowe",
+    q: "Środowisko testowe, składające się z zaślepek i sterowników potrzebnych do wykonania testu."
+  }, {
+    a: "język skryptowy",
+    q: "Język programowania, w którym pisane są skrypty testowe wykorzystywane przez narzędzie do uruchamiania testów (np. narzędzie rejestrująco-odtwarzające)."
+  }, {
+    a: "kamień milowy",
+    q: "Punkt w czasie realizacji projektu, dla którego zostały określone (pośrednie) produkty oraz wyniki."
+  }, {
+    a: "kierownik testów",
+    q: "Osoba odpowiedzialna za zarządzanie projektem w zakresie czynności związanych z testowaniem, w zakresie zasobów uczestniczących w testowaniu oraz oceny przedmiotu testu. Osoba, która kieruje, zarządza, administruje, planuje i reguluje ocenę przedmiotu testu."
+  }, {
+    a: "klasa równoważności",
+    q: "Podzbiór dziedziny danych wejściowych lub wyjściowych, dla którego zakłada się, na podstawie specyfikacji, że zachowanie modułu lub systemu jest takie samo."
+  }, {
+    a: "kod",
+    q: "Instrukcje komputera i definicje danych wyrażone w języku programowania lub w postaci wyjściowej w asemblerze, kompilatorze lub translatorze."
+  }, {
+    a: "komparator testowy",
+    q: "Narzędzie testowe do przeprowadzania automatycznego porównania rezultatów rzeczywistych z oczekiwanymi."
+  }, {
+    a: "kompilator",
+    q: "Narzędzie, które tłumaczy programy napisane w języku wysokiego poziomu na ich odpowiedniki w języku maszynowym."
+  }, {
+    a: "konfiguracja",
+    q: "Układ modułów lub system zdefiniowany za pomocą liczb, poprzez swoją naturę, oraz przez połączenia pomiędzy częściami składowymi."
+  }, {
+    a: "kontrola konfiguracji",
+    q: "Element zarządzania konfiguracją składający się z oceny, koordynacji oraz udzielenia lub nieudzielenia zgody na zmianę elementów konfiguracji oraz implantacji zmian po formalnej identyfikacji elementu konfiguracji."
+  }, {
+    a: "kreator instalacji",
+    q: "Oprogramowanie dostarczone na odpowiednich nośnikach, które prowadzi instalatora przez proces instalacji. Zazwyczaj wykonuje proces instalacji, informuje o jego wynikach i prosi o wybór opcji."
+  }, {
+    a: "kryteria akceptacji",
+    q: "Kryteria wyjścia, które moduł lub system musi spełniać, aby został zaakceptowany przez użytkownika, klienta lub inny uprawniony podmiot."
+  }, {
+    a: "kryteria wznowienia",
+    q: "Kryteria używane do wznowienia części lub całości aktywności testowych, które to czynności zostały uprzednio wstrzymane."
+  }, {
+    a: "kryteria zaliczenia/nie zaliczenia",
+    q: "Reguły decyzyjne wykorzystywane do określenia czy obiekt testowany (funkcja) lub cecha zaliczyła test."
+  }, {
+    a: "kryteria zawieszenia",
+    q: "Kryteria używane do (tymczasowego) zatrzymania wszystkich lub części aktywności testowych na elementach testowych."
+  }, {
+    a: "kryterium wejścia",
+    q: "Zbiór ogólnych i specyficznych warunków, których spełnienie jest wymagane do kontynuacji procesu dla określonego zadania, np. fazy testów. Celem kryterium wejścia jest ochrona przed rozpoczęciem zadania, w sytuacji, gdy pociąga to za sobą więcej (zmarnowanych) nakładów pracy w porównaniu z nakładem pracy potrzebnym do osiągnięcia stanu spełnienia kryterium wejścia. "
+  }, {
+    a: "kryterium wyjścia",
+    q: "Zbiór ogólnych i specyficznych warunków, uzgodnionych z udziałowcami, których spełnienie jest wymagane do oficjalnego zakończenia procesu. Celem kryterium wyjścia jest ochrona przed uznaniem zadania za ukończone w przypadku, gdy jakieś jego elementy nie są jeszcze w pełni wykonane. Kryteria wyjścia są stosowane jako argument przeciwko zakończeniu testów oraz do planowania, kiedy można to zrobić."
+  }, {
+    a: "log (dziennik) testów",
+    q: "Chronologiczny zapis szczegółów związanych z wykonaniem testów."
+  }, {
+    a: "logowanie testu",
+    q: "Proces rejestrowania informacji o wykonanych testach w logu testów."
+  }, {
+    a: "małpie testowanie",
+    q: "Metoda testowania polegającą na losowym wyborze z szerokiego zakresu wejść i losowym naciskaniu przycisków, ignorując sposób, w jaki produkt powinien być używany."
+  }, {
+    a: "manifest Agile",
+    q: "Określenie zasad, które stanowią zwinne wytwarzanie oprogramowania. Te zasady to: (1) ludzie i współpraca ponad procesy i narzędzia; (2) działające oprogramowanie ponad obszerną dokumentację; (3) współpraca z klientem ponad formalne ustalenia; (4) reagowanie na zmiany ponad podążanie za planem."
+  }, {
+    a: "mapa myśli",
+    q: "Diagram używany do przedstawiania słów, idei, zadań, lub innych elementów związanych i układających się wokół centralnego słowa lub idei. Mapa myśli jest używana do generowania, wizualizacji, strukturalizowania i klasyfikowania idei oraz jako środek pomocniczy w poznawaniu, organizacji, rozwiązywaniu problemów, podejmowaniu decyzji i pisaniu."
+  }, {
+    a: "maskowanie defektów",
+    q: "Sytuacja, w której występowanie jednego defektu uniemożliwia wykrycie innego."
+  }, {
+    a: "matryca odpowiedzialności – model RACI",
+    q: "Macierz przedstawiająca udział różnych ról w wykonywaniu zadań lub produktów w projekcie lub procesie. Jest ona szczególnie użyteczna w wyjaśnianiu ról i odpowiedzialności. RACI jest akronimem wyprowadzonym z czterech kluczowych najczęściej używanych odpowiedzialności: Odpowiedzialny (ang. Responsible), Rozliczany (ang. Accountable), Konsultujący (ang. Consulted) i Informowany (ang. Informed)."
+  }, {
+    a: "metryka",
+    q: "Skala pomiaru i sposób jej stosowania."
+  }, {
+    a: "misja testowania",
+    q: "Cel testowania w organizacji, często dokumentowany jako część polityki testów."
+  }, {
+    a: "model cyklu życia",
+    q: "Podział życia produktu lub projektu na fazy."
+  }, {
+    a: "model V",
+    q: "Opis czynności cyklu życia wytwarzania oprogramowania od specyfikacji wymagań do pielęgnacji. Model V ilustruje jak czynności testowe mogą być integrowane z każdym etapem cyklu życia wytwarzania oprogramowania."
+  }, {
+    a: "moderator",
+    q: "Lider i główna osoba odpowiedzialna za prowadzenie inspekcji lub przeglądu."
+  }, {
+    a: "moduł",
+    q: "Najmniejszy element programu, który będzie testowany w izolacji - niezależnie od innych modułów."
+  }, {
+    a: "monitorowanie testów",
+    q: "Zadanie w zarządzaniu testowaniem, zajmujące się okresowym sprawdzaniem statusu projektu testowego. Przygotowywane są raporty porównujące stan aktualny z planowanym. Patrz także zarządzanie testami."
+  }, {
+    a: "nadzór nad testami",
+    q: "Zadanie z zakresu zarządzania\ntestem, którego celem jest opracowanie i zastosowanie działań korygujących projekt testowy, kiedy monitowanie pokazuje odchylenie od planu. "
+  }, {
+    a: "najlepsza praktyka",
+    q: "Zalecana metoda albo nowatorska praktyka, która przyczynia się do lepszych wyników organizacji w konkretnym kontekście, zwykle uznawana za \"najlepszą\" przez inne podobne organizacje."
+  }, {
+    a: "narzędzie do analizy dynamicznej",
+    q: "Narzędzie rejestrujące informacje o stanie wykonywanego programu. Takie narzędzia używane są najczęściej do znajdowania nieprzypisanych wskaźników, sprawdzanie alokacji, użycia i dealokacji pamięci oraz do oznaczania jej wycieków."
+  }, {
+    a: "narzędzie do debagowania",
+    q: "Narzędzie używane przez programistów do odtwarzania awarii, śledzenia stanu programu i odszukiwania usterek. Debagery umożliwiają programistom wykonywanie programów krok po kroku, zatrzymywanie wykonania programu na dowolnej instrukcji oraz sprawdzanie i ustawianie wartości zmiennych."
+  }, {
+    a: "narzędzie do modelowania",
+    q: "Narzędzie, które wspiera walidację modeli oprogramowania lub systemów."
+  }, {
+    a: "narzędzie do projektowania testu",
+    q: "Narzędzie, które wspiera projektowanie testu generując wejścia ze specyfikacji (przechowywanej na przykład w repozytorium systemu typu CASE jak narzędzie zarządzania wymaganiami), z wyspecyfikowanych warunków testu przechowywanych w samym narzędziu lub z kodu."
+  }, {
+    a: "narzędzie do przygotowywania danych testowych",
+    q: "Rodzaj narzędzia testowego, które pozwala na wybranie danych z istniejącej bazy danych lub ich stworzenie, wygenerowanie, przetworzenie i edycję dla użycia w testowaniu."
+  }, {
+    a: "narzędzie do testowania obciążenia",
+    q: "Narzędzie wspierające testy obciążeniowe, za pomocą którego można symulować narastające obciążenie, np. ilość aktualnie pracujących użytkowników i/lub liczbę transakcji w określonym czasie."
+  }, {
+    a: "narzędzie do testowania przeciążającego",
+    q: "Narzędzie, które wspiera testowanie przeciążające."
+  }, {
+    a: "narzędzie do testów wydajnościowych",
+    q: "Narzędzie wspierające testowanie wydajnościowe, zazwyczaj mające dwie funkcjonalności: generacja obciążenia i pomiar transakcji. Generowane obciążenie może symulować zarówno wielu użytkowników, jak i dużą ilość wprowadzanych danych. W czasie wykonywania testów logowane są tylko pomiary z wybranych transakcji. Narzędzia do testów wydajnościowych zazwyczaj dostarczają raporty bazujące na logowanych transakcjach oraz wykresy obciążenia w zależności od czasów odpowiedzi."
+  }, {
+    a: "narzędzie do testów zabezpieczeń",
+    q: "Narzędzie wspierające testowanie charakterystyk zabezpieczeń i podatności."
+  }, {
+    a: "narzędzie do wykonywania testu",
+    q: "Rodzaj narzędzia testowego, które jest w stanie wykonać inne oprogramowanie używając testowych skryptów automatycznych, np. narzędzie rejestrująco-odtwarzające."
+  }, {
+    a: "narzędzie do zabezpieczeń",
+    q: "Narzędzie, które wspiera zabezpieczenia operacyjne."
+  }, {
+    a: "narzędzie do zarządzania defektami",
+    q: "Narzędzie wspomagające zapisywanie informacji o defektach i śledzenie ich statusu oraz zmian. Takie narzędzia często posiadają funkcje śledzenia i nadzorowania przepływu pracy związanego z przypisywaniem, poprawianiem i re-testowaniem defektów oraz posiadają funkcje raportowe."
+  }, {
+    a: "narzędzie do zarządzania incydentami",
+    q: "Narzędzia\nułatwiające rejestrację incydentów i śledzenie ich statusów. Często oferują funkcje śledzenia i kontroli przepływu pracy związanego z przydziałem, naprawą i retestami. Zapewniają również możliwość raportowania."
+  }, {
+    a: "narzędzie do zarządzania konfiguracją",
+    q: "Narzędzie wspomagające identyfikację oraz kontrolę elementów konfiguracji, ich statusów i wersji podczas wykonywania zmian oraz tworzenia wydań/publikacji, w których skład wchodzą."
+  }, {
+    a: "narzędzie do zarządzania testami",
+    q: "Narzędzie wspomagające zarządzanie testami i sterowanie częścią procesu testowego. Zwykle ma kilka funkcji takich jak zarządzanie testaliami, planowanie testów w czasie, logowanie rezultatów, śledzenie postępu prac, zarządzanie incydentami oraz raportowanie wyników testów."
+  }, {
+    a: "narzędzie do zarządzania wymaganiami",
+    q: "Narzędzie wspierające rejestrowanie wymagań i ich atrybutów posiadające zdolność śledzenia powiązań miedzy warstwami wymagań i zarządzania zmianami w wymaganiach. Niektóre narzędzia posiadają funkcjonalności umożliwiające analizę statyczną np. sprawdzanie zwięzłości wymagań lub odstępstw od zdefiniowanych reguł dotyczących wymagań."
+  }, {
+    a: "narzędzie mierzące pokrycie",
+    q: "Narzędzie dające obiektywną miarę, które elementy strukturalne (np. instrukcje, gałęzie) zostały sprawdzone przez zestaw testowy."
+  }, {
+    a: "narzędzie o otwartym kodzie",
+    q: "Narzędzie programistyczne, które jest dostępne dla wszystkich potencjalnych użytkowników w postaci kodu źródłowego, zwykle poprzez internet. Na ogół w postaci licencji na badanie, zmienianie, poprawianie i czasami dystrybuowanie oprogramowania."
+  }, {
+    a: "narzędzie rejestrująco-odtwarzające",
+    q: "Rodzaj narzędzia do wykonywania testu, w którym dane wejściowe są nagrane podczas testów manualnych w celu wygenerowania automatycznych skryptów, które mogą być uruchomione później (tzn. powtórzone). Narzędzia te są często używane do wspierania automatycznego testowania regresyjnego."
+  }, {
+    a: "narzędzie testowe",
+    q: "Oprogramowanie, które wspomaga jedną lub kilka czynności testowych, takich jak planowanie, zarządzanie, specyfikacja, budowa początkowych plików i danych, wykonanie i analiza testów."
+  }, {
+    a: "narzędzie wspomagające przegląd",
+    q: "Narzędzie, które zapewnia wsparcie w procesie przeglądu. Typowe cechy narzędzia to planowanie przeglądu i wspomaganie śledzenia, wspomaganie komunikacji oraz współpracy przy przeglądach, a także prowadzenie repozytorium do gromadzenia i raportowania metryk."
+  }, {
+    a: "nieosiągalny kod",
+    q: "Kod, który nie może być osiągnięty i dlatego też nie jest wykonywany."
+  }, {
+    a: "niezależność testowania",
+    q: "Rozdzielenie odpowiedzialności, które sprzyja zapewnieniu obiektywności testowania."
+  }, {
+    a: "niezawodność",
+    q: "Zdolność oprogramowania do wykonywania wymaganych funkcji w określonych warunkach przez określony czas lub dla określonej liczby operacji."
+  }, {
+    a: "niezdany",
+    q: "Test uznaje się za niezdany, jeśli jego rzeczywisty rezultat nie zgadza się z oczekiwanym."
+  }, {
+    a: "niezgodność",
+    q: "Niespełnienie konkretnego wymagania."
+  }, {
+    a: "norma",
+    q: "Formalny, o ile to możliwe obowiązkowy, zbiór wymagań stworzony i używany do opisu zalecanego spójnego podejścia do sposobu pracy lub do dostarczania wytycznych (np. normy ISO/IEC, normy IEEE lub normy w organizacjach)."
+  }, {
+    a: "obsługa wyjątków",
+    q: "Zachowanie modułu lub systemu w odpowiedzi na błędne wejście wprowadzone przez użytkownika lub inny moduł czy system."
+  }, {
+    a: "oczekiwany rezultat",
+    q: "Zachowanie modułu lub systemu w określonych warunkach określone na podstawie specyfikacji lub innego źródła."
+  }, {
+    a: "odtwarzalność",
+    q: "Zdolność oprogramowania do osiągania określonego poziomu wydajności i przywracania danych uszkodzonych przez awarię."
+  }, {
+    a: "oprogramowanie",
+    q: "Programy komputerowe, procedury, dokumentacja i dane mające związek z działaniem systemu komputerowego."
+  }, {
+    a: "oprogramowanie z półki",
+    q: "Oprogramowanie stanowiące produkt wytworzony na szeroki rynek, tj. dla dużej liczby klientów, które jest dostarczane wielu klientom w identycznej postaci."
+  }, {
+    a: "pielęgnowalność",
+    q: "Łatwość, z którą oprogramowanie może być modyfikowane w celu naprawy defektów, dostosowania do nowych wymagań, modyfikowane w celu ułatwienia przyszłego utrzymania lub dostosowania do zmian zachodzących w jego środowisku. "
+  }, {
+    a: "plan przeglądu",
+    q: "Dokument opisujący podejście, zasoby i harmonogram zamierzonych czynności związanych z przeglądem. Identyfikuje on, m.in. dokumenty i kod podlegający przeglądowi, typy przeglądów do wykorzystania, uczestników, a także kryteria wejścia i wyjścia, które będą stosowane w przeglądach formalnych, a także uzasadnienie ich wyboru. Jest zapisem procesu planowania przeglądu."
+  }, {
+    a: "plan testów",
+    q: "Dokument opisujący zakres, metody, zasoby oraz harmonogram zamierzonych czynności testowych. Określa - między innymi - elementy testowe, testowane cechy, zadania testowe, kto będzie te zadania wykonywał, stopień niezależności testerów, środowisko testowe, technikę projektowania testów oraz kryteria wejścia i wyjścia, przesłanki ich użycia, a także ryzyka wymagające ciągłego planowania. Jest to zapis procesu planowania testów."
+  }, {
+    a: "planowanie testów",
+    q: "Czynność tworzenia planów testów lub wprowadzanie do nich zmian."
+  }, {
+    a: "podejście do testu",
+    q: "Implementacja strategii testów dla konkretnego projektu. Zwykle zawiera decyzje podjęte na podstawie celów i analizy ryzyka projektu (testowego), punkty startowe procesu testowego, techniki projektowania testu do wykorzystania, kryteria wyjścia i typy testu do wykonania."
+  }, {
+    a: "podstawa",
+    q: "Specyfikacja lub oprogramowanie, które było poddane formalnemu przeglądowi lub uprzednio uzgodnione, będące odniesieniem dla dalszych prac programistycznych, które może ulec zmianie tylko przez formalną procedurę zmian."
+  }, {
+    a: "podstawa testu",
+    q: "Wszystkie dokumenty, z których można wywnioskować wymagania dla modułu lub systemu. Dokumentacja, na podstawie której oparte są przypadki testowe. Jeśli dokument może być zmieniony tylko poprzez formalną procedurę zmiany, to podstawa testu nazywana jest zamrożoną podstawą testu."
+  }, {
+    a: "podstawowe testowanie porównawcze",
+    q: "Czarnoskrzynkowa technika projektowania przypadków testowych, w której przypadki testowe projektowane są tak, by wykonać kombinację wejść wykorzystując metodę testowania zmodyfikowanego pokrycia warunków wielokrotnych."
+  }, {
+    a: "podstawowy zestaw testów",
+    q: "Zestaw przypadków testowych powstały na podstawie wewnętrznej struktury modułu lub specyfikacji, który zapewnia osiągnięcie 100% określonego kryterium pokrycia."
+  }, {
+    a: "podział na klasy równoważności",
+    q: "Czarnoskrzynkowa technika projektowania przypadków testowych, w której przypadki testowe projektowane są tak, aby użyć elementów z klas równoważności. W szczególności przypadki testowe projektowane są tak, aby co najmniej raz pokryć każdą klasę równoważności (tzn. by z każdej klasy równoważności wziąć jednego reprezentanta)."
+  }, {
+    a: "pokrycie decyzji",
+    q: "Odsetek możliwych wyników decyzji, które zostały przetestowane przez zestaw testowy. 100% pokrycia decyzji jest równoważny 100% pokrycia gałęzi oraz implikuje 100% pokrycia instrukcji."
+  }, {
+    a: "pokrycie gałęzi",
+    q: "Odsetek gałęzi sprawdzonych przez zestaw przypadków testowych. 100% pokrycia gałęzi implikuje 100% pokrycia decyzji i 100% pokrycia instrukcji."
+  }, {
+    a: "pokrycie instrukcji kodu",
+    q: "Odsetek instrukcji wykonywalnych, które zostały przetestowane przez zestaw testowy."
+  }, {
+    a: "pokrycie klas równoważności",
+    q: "Odsetek klas równoważności, które zostały sprawdzone przez zestaw testów."
+  }, {
+    a: "pokrycie kodu",
+    q: "Metoda analityczna, określająca które części programu zostały wykonane (pokryte) przez zestaw testowy, oraz które części nie zostały wykonane, np. pokrycie instrukcji kodu, pokrycie decyzji, pokrycie warunków."
+  }, {
+    a: "pokrycie wartości brzegowych",
+    q: "Odsetek wartości brzegowych, który został sprawdzony przez zestaw przypadków testowych."
+  }, {
+    a: "pokrycie warunków",
+    q: "Odsetek pokrycia warunków, jaki został sprawdzony przez zestaw testów. 100% pokrycia warunków wymaga, aby każdy pojedynczy warunek każdego wyrażenia decyzyjnego został przetestowany zarówno dla wartości Prawda jak i Fałsz."
+  }, {
+    a: "pokrycie warunków decyzji",
+    q: "Odsetek wszystkich możliwych wyników warunków prostych w decyzjach, które zostały sprawdzone przez zestaw testowy; 100% pokrycia warunków decyzji implikuje 100% pokrycia warunków oraz 100% pokrycia decyzji."
+  }, {
+    a: "polityka testów",
+    q: "Dokument wysokiego poziomu opisujący zasady, podejście i główne zadania organizacji dotyczące testowania."
+  }, {
+    a: "pomyłka",
+    q: "Patrz błąd."
+  }, {
+    a: "powtarzalność testów",
+    q: "Atrybut testu wskazujący czy przy każdym wykonaniu testu otrzymujemy te same wyniki."
+  }, {
+    a: "poziom integralności oprogramowania",
+    q: "Stopień, w jakim oprogramowanie spełnia lub musi spełniać zbiór wybranych przez interesariuszy cech oprogramowania lub charakterystyk systemu (np. złożoność oprogramowania, ocenione ryzyko, poziom zabezpieczeń, poziom bezpieczeństwa, pożądana wydajność, niezawodność lub koszt), które to cechy obrazują, jak ważne jest dane oprogramowanie dla jego interesariuszy."
+  }, {
+    a: "poziom ryzyka",
+    q: "Określenie istotności ryzyka zdefiniowane przez jego właściwości: wpływ i prawdopodobieństwo. Poziom ryzyka może być użyty do określenia ‘poziomu’ testów, które należy przeprowadzić."
+  }, {
+    a: "poziom testów",
+    q: "Grupa czynności testowych, które są razem zorganizowane i zarządzane. Poziom testów jest powiązany z poziomami odpowiedzialności w projekcie. Przykładami poziomów testów są testy modułowe, integracyjne, systemowe i akceptacyjne."
+  }, {
+    a: "priorytet",
+    q: "Poziom (biznesowej) ważności określony dla elementu np. defektu."
+  }, {
+    a: "produkt",
+    q: "Dowolny produkt pracy, który musi być dostarczony komuś innemu niż jego autor."
+  }, {
+    a: "profil obciążenia",
+    q: "Specyfikacja aktywności użytkowników, jakiej testowany moduł lub system może doświadczyć w trakcie użycia operacyjnego. Profil obciążenia składa się z określonej liczby wirtualnych użytkowników, którzy przetwarzają zdefiniowany zbiór transakcji w określonym przedziale czasowym i zgodnie z predefiniowanym profilem produkcyjnym."
+  }, {
+    a: "programowanie ekstremalne (extreme programming XP)",
+    q: "Metodyka inżynierii oprogramowania używana w ramach zwinnego wytwarzania oprogramowania. Jej podstawowe praktyki to programowanie w parach, wykonywanie dokładnych przeglądów kodu, testowanie modułowe całego kodu, jasność i przejrzystość kodu."
+  }, {
+    a: "programowanie parami",
+    q: "Metoda wytwarzania oprogramowania, w której linie kodu (produkcyjne i/lub testowe) modułu są pisane przez dwóch programistów siedzących przy jednym komputerze. Domyślnie oznacza to odbywający się w czasie rzeczywistym przegląd kodu."
+  }, {
+    a: "projekt",
+    q: "Projekt jest to zestaw skoordynowanych i kontrolowanych aktywności o określonym czasie rozpoczęcia i zakończenia. Powoływany jest w celu osiągnięcia celu zgodnie z określonymi wymaganiami włączając w nie ograniczenia czasowe, kosztowe i zasobowe."
+  }, {
+    a: "projektowanie funkcjonalnych przypadków testowych",
+    q: "Procedura projektowania i/lub wyboru przypadków testowych w oparciu o analizę specyfikacji funkcjonalnej modułu lub systemu bez zaglądania w jego wewnętrzną strukturę. Patrz także czarnoskrzynkowa technika projektowania przypadków testowych."
+  }, {
+    a: "projektowanie przypadków testowych w oparciu o specyfikację",
+    q: "Patrz czarnoskrzynkowa technika projektowania przypadków testowych."
+  }, {
+    a: "projektowanie strukturalnych przypadków testowych",
+    q: "Patrz białoskrzynkowe techniki projektowania."
+  }, {
+    a: "protokólant (skryba)",
+    q: "Osoba, która podczas spotkania przeglądowego rejestruje w dzienniku przeglądu każdy zgłoszony defekt lub sugestię odnośnie usprawnienia procesu. Protokólant musi zapewnić, że dziennik przeglądu jest czytelny i zrozumiały."
+  }, {
+    a: "przebieg testu",
+    q: "Wykonanie testu na określonej wersji przedmiotu testu."
+  }, {
+    a: "przedmiot pokrycia",
+    q: "Obiekt lub właściwość wykorzystywane jako punkt wyjścia dla zaprojektowania testów pokrycia, np. klasy równoważności lub pokrycie kodu."
+  }, {
+    a: "przedmiot testów",
+    q: "Moduł lub system podlegający testowaniu."
+  }, {
+    a: "przegląd",
+    q: "Ocena produktu lub statusu projektu mająca na celu stwierdzenie rozbieżności od planowanych założeń i rekomendację usprawnień. Przykłady: przegląd kierowniczy, przegląd nieformalny, przegląd techniczny, inspekcja, przejrzenie."
+  }, {
+    a: "przegląd formalny",
+    q: "Przegląd charakteryzujący się udokumentowanymi procedurami i wymaganiami, np. inspekcja."
+  }, {
+    a: "przegląd koleżeński",
+    q: "Przegląd produktów powstałych podczas wytwarzania oprogramowania przeprowadzany przez kolegów ich twórcy mający na celu wskazanie defektów i możliwości poprawek. Przykładami przeglądów są inspekcje, przegląd techniczny oraz przejrzenie."
+  }, {
+    a: "przegląd nieformalny",
+    q: "Przegląd, który nie jest oparty na formalnej (udokumentowanej) procedurze."
+  }, {
+    a: "przegląd techniczny",
+    q: "Dyskusja w grupie współpracowników skupiająca się na osiągnięciu porozumienia w zakresie aspektów technicznych."
+  }, {
+    a: "przeglądający",
+    q: "Osoba zaangażowana w przegląd, która identyfikuje i opisuje odstępstwa w przeglądanym produkcie lub projekcie. Przeglądający mogą być dobierani tak, aby reprezentować różne punkty widzenia i pełnić różne role w procesie przeglądu."
+  }, {
+    a: "przejrzenie",
+    q: "Przedstawienie przez autora, krok po kroku, dokumentu w celu zebrania informacji i ustalenia wspólnego rozumienia jego zawartości."
+  }, {
+    a: "przenaszalność",
+    q: "Łatwość z jaką oprogramowanie może być przeniesione z jednego środowiska sprzętowego lub programowego do innego środowiska."
+  }, {
+    a: "przepływ danych",
+    q: "Abstrakcyjna reprezentacja sekwencji i możliwych zmian stanu obiektu danych, gdzie dostępne stany obiektu to utworzenie, użycie lub usunięcie."
+  }, {
+    a: "przepływ sterowania",
+    q: "Sekwencja zdarzeń (w postaci ścieżki) mająca miejsce podczas pracy modułu lub systemu."
+  }, {
+    a: "przetestowany",
+    q: "Element oprogramowania określa się jako przetestowany (sprawdzony) przez przypadek testowy, kiedy wartość wejściowa powoduje wykonanie tego elementu, np. instrukcji, decyzji lub innego elementu strukturalnego."
+  }, {
+    a: "przewodnik instalacji",
+    q: "Instrukcje dostarczone na odpowiednich nośnikach, które prowadzą instalatora przez proces instalacji. Może to być podręcznik, procedura krok po kroku, kreator lub dowolny inny opis procesu."
+  }, {
+    a: "przypadek testowy",
+    q: "Zbiór danych wejściowych, wstępnych warunków wykonania, oczekiwanych rezultatów i końcowych warunków wykonania opracowany w określonym celu lub dla warunku testowego, jak wykonanie pewnej ścieżki programu lub zweryfikowanie zgodności z konkretnym wymaganiem."
+  }, {
+    a: "przypadek testowy niskiego poziomu",
+    q: "Przypadek testowy z konkretnymi (na poziomie implementacji) wartościami wejściowymi i wynikami oczekiwanymi. Logiczne operatory z przypadków testowych wysokiego poziomu są zamieniane na konkretne wartości, które odpowiadają celom logicznych operatorów."
+  }, {
+    a: "przypadek testowy wysokiego poziomu",
+    q: "Przypadek testowy bez konkretnych (poziom implementacji) wartości danych wejściowych i oczekiwanych rezultatów. Używane są operatory logiczne; rzeczywiste wartości nie są jeszcze zdefiniowane i/ lub dostępne."
+  }, {
+    a: "przypadek użycia",
+    q: "Ciąg transakcji w dialogu pomiędzy użytkownikiem a systemem z namacalnym rezultatem."
+  }, {
+    a: "przyrostowy model wytwarzania",
+    q: "Model wytwarzania oprogramowania, w którym przedsięwzięcie realizowane jest przyrostowo, w cyklach, z których każdy dostarcza część funkcjonalności z całego zbioru wymagań. Wymagania są porządkowane według priorytetów i realizowane w tej kolejności w odpowiednich przyrostach. W niektórych, (ale nie wszystkich) wersjach tego modelu wytwarzania, każdy podprojekt jest realizowany zgodnie z ‘mini’ modelem V z fazami: projektowania, kodowania i testowania."
+  }, {
+    a: "pseudolosowy",
+    q: "Ciąg, który wygląda na losowy, ale w rzeczywistości został wygenerowany według pewnej uprzednio przygotowanej sekwencji."
+  }, {
+    a: "punkt startu",
+    q: "Pierwsze wyrażenie wykonywalne wewnątrz modułu."
+  }, {
+    a: "punkt wyjścia",
+    q: "Ostatnie wyrażenie wykonywalne wewnątrz modułu."
+  }, {
+    a: "raport o incydencie",
+    q: "Dokument opisujący jakiekolwiek zdarzenie, które nastąpiło np. podczas testowania wymagające dalszego zbadania."
+  }, {
+    a: "raport o postępie testów",
+    q: "Dokument zawierający podsumowanie aktywności testowych i osiągniętych wyników, tworzony regularnie, by zaraportować postęp prac testowych w stosunku do założeń (takich jak np. oryginalny plan testów) i przedstawiający ryzyka i alternatywy wymagające podjęcia decyzji zarządczych."
+  }, {
+    a: "raport z testów",
+    q: "Patrz sumaryczny raport z testów"
+  }, {
+    a: "rejestracja incydentu",
+    q: "Dokumentowanie szczegółów zdarzenia, które wystąpiło, na przykład podczas testów."
+  }, {
+    a: "retestowanie",
+    q: "Testowanie polegające na uruchomieniu przypadków testowych, które podczas ostatniego uruchomienia wykryły błędy, w celu sprawdzenia poprawności naprawy."
+  }, {
+    a: "retrospektywa projektu",
+    q: "Ustrukturalizowane podejście do zapoznania się z wyciągniętymi wnioskami i stworzenia konkretnych planów działań mających na celu poprawę następnego projektu lub następnego etapu projektu."
+  }, {
+    a: "rezultat",
+    q: "Konsekwencja wyniku wykonania testu. Zawiera on wyjścia na ekran, zmiany danych, raporty oraz wysyłane komunikaty."
+  }, {
+    a: "ryzyko",
+    q: "Czynnik, który w przyszłości może skutkować negatywnymi konsekwencjami; zazwyczaj opisywany jako wpływ oraz prawdopodobieństwo."
+  }, {
+    a: "ryzyko produktowe",
+    q: "Ryzyko bezpośrednio powiązane z przedmiotem testów."
+  }, {
+    a: "ryzyko projektowe",
+    q: "Ryzyko związane z zarządzaniem i kontrolą projektu (testowego), np. braki zasobowe, rygorystyczny harmonogram, zmieniające się wymagania itp. "
+  }, {
+    a: "rzeczywisty rezultat",
+    q: "Wytworzone/zaobserwowane zachowanie się modułu lub systemu podczas testowania tego modułu lub systemu."
+  }, {
+    a: "scenariusz testowy",
+    q: "Patrz specyfikacja procedury testowej."
+  }, {
+    a: "SCRUM",
+    q: "Iteracyjna, przyrostowa struktura zarządzania projektem, powszechnie stosowana w zwinnym wytwarzaniu oprogramowania."
+  }, {
+    a: "sesja testowa",
+    q: "W testowaniu eksploracyjnym, nieprzerywalny okres czasu poświęcony testowaniu. Każda sesja zorientowana jest na kartę opisu, ale tester może w tym czasie także odkrywać nowe możliwości lub kwestie. Tester tworzy i wykonuje przypadki testowe w locie oraz zapisuje ich postęp."
+  }, {
+    a: "skrypt testowy",
+    q: "Powszechnie używana nazwa specyfikacji procedury testowej, zwłaszcza automatycznej."
+  }, {
+    a: "specyfikacja",
+    q: "Dokument, który określa, najlepiej w kompletny, precyzyjny i możliwy do weryfikacji sposób, wymagania, projekt, zachowanie lub inne właściwości modułu lub systemu, oraz często procedury sprawdzania, czy te warunki zostały spełnione."
+  }, {
+    a: "specyfikacja procedury testowej",
+    q: "Dokument określający ciąg akcji umożliwiający wykonanie testu. Znana także jako skrypt testowy lub manualny skrypt testowy."
+  }, {
+    a: "specyfikacja projektu testów",
+    q: "Dokument specyfikujący warunki testowe (elementy pokrycia) dla elementu testowego, szczegółowe podejście do testów oraz identyfikujący powiązane przypadki testowe wysokiego poziomu."
+  }, {
+    a: "specyfikacja przypadków testowych",
+    q: "Dokument specyfikujący zbiór przypadków testowych (cel, wejścia, czynności testowe, oczekiwane rezultaty i wstępne warunki wykonania) dla elementu testowego."
+  }, {
+    a: "specyfikacja testów",
+    q: "Dokument zawierający specyfikację projektu testów, specyfikacje przypadków testowych i/lub specyfikację procedury testowej."
+  }, {
+    a: "spotkanie retrospektywne",
+    q: "Spotkanie na końcu projektu, podczas którego członkowie zespołu projektowego oceniają projekt i wyciągają wnioski, które mogą być wykorzystane w następnym projekcie."
+  }, {
+    a: "sterownik",
+    q: "Moduł oprogramowania lub narzędzie testowe, które zastępuje moduł kontrolujący lub wywołujący funkcje testowanego modułu lub systemu."
+  }, {
+    a: "strategia testów",
+    q: "Wysokopoziomowy opis poziomów testów, które mają być wykonane oraz testów w ramach tych poziomów dla organizacji lub programu (jednego lub kilku projektów)."
+  }, {
+    a: "struktura do testów jednostkowych",
+    q: "Narzędzie, które dostarcza środowisko do testów jednostkowych lub modułowych. W takim środowisku moduł może być testowany niezależnie (w izolacji) lub z użyciem odpowiednich zaślepek i sterowników. Dostarcza również innego rodzaju wsparcia dla programistów np. możliwość debagowania."
+  }, {
+    a: "sumaryczny raport z testów",
+    q: "Sumaryczny dokument przedstawiający działania testowe i ich rezultaty. Zawiera także ocenę testowanych elementów pod względem zgodności z kryteriami wyjścia."
+  }, {
+    a: "symulator",
+    q: "Urządzenie, program komputerowy albo system używany podczas testowania, który przy zadanym zbiorze wejść zachowuje się lub działa tak jak dany system."
+  }, {
+    a: "system krytyczny ze względów bezpieczeństwa",
+    q: "System, którego awaria lub nieprawidłowe działanie może skutkować śmiercią lub poważnymi obrażeniami ludzi, utratą lub poważnymi uszkodzeniami urządzeń, lub zanieczyszczeniem środowiska."
+  }, {
+    a: "ścieżka",
+    q: "Sekwencja wydarzeń, np. wykonywalnych wyrażeń, w ramach modułu lub systemu począwszy od punktu wejścia do punktu wyjścia."
+  }, {
+    a: "średni czas do naprawy",
+    q: "Średnia arytmetyczna czasu, w jakim system będzie uruchomiony po awarii. Na ogół jest w tym zawarte testowanie zapewniające, że defekt został usunięty."
+  }, {
+    a: "średni czas pomiędzy awariami (MTBF)",
+    q: "Średnia arytmetyczna czasów pomiędzy awariami systemu. Na ogół jest to część modelu wzrostu niezawodności, w którym zakłada się, że awarie systemu są natychmiast naprawiane, jako część procesu usuwania defektów."
+  }, {
+    a: "środowisko produkcyjne",
+    q: "Sprzęt i oprogramowanie zainstalowane w siedzibie użytkownika lub klienta, w którym moduł lub system będzie używany. W skład oprogramowania mogą wchodzić systemy operacyjne, bazy danych i inne aplikacje."
+  }, {
+    a: "środowisko testowe",
+    q: "Środowisko, w skład którego wchodzi sprzęt, wyposażenie, symulatory, oprogramowanie oraz inne elementy wspierające, potrzebne do wykonania testu."
+  }, {
+    a: "tablica decyzyjna",
+    q: "Tablica pokazująca kombinację wejść i/lub czynników (przyczyn) z odpowiadającymi im wyjściami i akcjami (skutkami), pomocna w projektowaniu przypadków testowych."
+  }, {
+    a: "tablica stanów",
+    q: "Tablica, która dla każdego stanu zestawia przejścia z tego stanu z każdym możliwym zdarzeniem. Obrazuje zarówno dozwolone, jak i niedozwolone przejścia."
+  }, {
+    a: "technika projektowania testów",
+    q: "Procedura używana do wywodzenia i/lub wybierania przypadków testowych."
+  }, {
+    a: "technika projektowania testów niefunkcjonalnych",
+    q: "Procedura otrzymywania i/lub wyboru przypadków testowych dla testów niefunkcjonalnych oparta na analizie specyfikacji modułu lub systemu bez odniesienia do jego wewnętrznej struktury."
+  }, {
+    a: "technika projektowania testów oparta na defektach",
+    q: "Procedura projektowania i/ lub wyboru przypadków testowych ukierunkowana na jeden lub więcej typów defektów, w której testy projektuje się na podstawie wiedzy o określonych typach defektów."
+  }, {
+    a: "technika projektowania testów oparta na doświadczeniu",
+    q: "Procedura projektowania i/lub wyboru przypadków testowych w oparciu o doświadczenie, wiedzę i intuicję testera."
+  }, {
+    a: "technika projektowania testów w oparciu o strukturę",
+    q: "patrz białoskrzynkowe techniki projektowania testów."
+  }, {
+    a: "technika wykonywania testu",
+    q: "Metoda użyta do wykonania konkretnego testu, zarówno ręcznie, jak i automatycznie."
+  }, {
+    a: "Test",
+    q: "Zestaw jednego lub więcej przypadków testowych. "
+  }, {
+    a: "test dymny",
+    q: "Podzbiór wszystkich zdefiniowanych / zaplanowanych przypadków testowych, które pokrywają główne funkcjonalności modułu lub systemu, mający na celu potwierdzenie, że kluczowe funkcjonalności programu działają, bez zagłębiania się w szczegóły. Codzienne budowanie i testy dymne stanowią dobre praktyki wytwarzania oprogramowania. "
+  }, {
+    a: "testalia",
+    q: "Wszystkie dokumenty i narzędzia (artefakty) wytworzone i używane podczas procesu testowania niezbędne do planowania, projektowania i wykonywania testów, takie jak dokumentacja, skrypty, wejścia, oczekiwane rezultaty, procedury, pliki, bazy danych, środowiska oraz każde dodatkowe oprogramowanie i narzędzia użyte podczas testowania."
+  }, {
+    a: "tester",
+    q: "Wykwalifikowany profesjonalista, zaangażowany w testowanie modułu lub systemu."
+  }, {
+    a: "testowanie",
+    q: "Proces składający się z wszystkich czynności cyklu życia, zarówno statycznych jak i dynamicznych. Skoncentrowany na planowaniu, przygotowaniu i ewaluacji oprogramowania oraz powiązanych produktów w celu określenia czy spełniają one wyspecyfikowane wymagania oraz wykazania, że są one dopasowane do swoich celów oraz do wykrywania usterek."
+  }, {
+    a: "testowanie ad hoc",
+    q: "Testy wykonywane nieformalnie; nie ma miejsca żadne formalne przygotowanie testu, nie jest użyta żadna rozpoznawalna technika projektowania przypadków testowych, brak jest oczekiwań co do rezultatów, wykonaniem testu kieruje dowolność."
+  }, {
+    a: "testowanie akceptacyjne",
+    q: "Testowanie formalne przeprowadzane w celu umożliwienia użytkownikowi, klientowi lub innemu uprawnionemu podmiotowi ustalenia, czy zaakceptować system lub moduł."
+  }, {
+    a: "testowanie alfa",
+    q: "Symulowane lub rzeczywiste testy produkcyjne przeprowadzane przez potencjalnych użytkowników lub niezależny zespół testowy, przeprowadzane u producenta, ale bez udziału wytwórców oprogramowania. Testowanie alfa jest często wykorzystywane jako forma wewnętrznych testów akceptacyjnych dla oprogramowania z półki."
+  }, {
+    a: "testowanie beta",
+    q: "Testowanie produkcyjne wykonywane przez potencjalnego i/lub istniejącego użytkownika/klienta w zewnętrznym miejscu niezwiązanym z programistami/twórcami - poza organizacją wytwórczą, w celu podjęcia decyzji, czy moduł albo system zaspokaja potrzeby użytkownika/klienta i współgra z procesami biznesowymi. Testowanie beta jest często traktowane jako forma zewnętrznych testów akceptacyjnych oprogramowania \"z półki\" w celu uzyskania informacji zwrotnej z rynku."
+  }, {
+    a: "testowanie bezpieczeństwa",
+    q: "Testowanie mające na celu określenie bezpieczeństwa oprogramowania."
+  }, {
+    a: "testowanie białoskrzynkowe",
+    q: "Testowanie oparte na analizie wewnętrznej struktury modułu lub systemu."
+  }, {
+    a: "testowanie czarnoskrzynkowe",
+    q: "Testowanie funkcjonalne lub niefunkcjonalne, bez odniesienia do wewnętrznej struktury modułu lub systemu."
+  }, {
+    a: "testowanie decyzji",
+    q: "Białoskrzynkowa technika projektowania przypadków testowych polegająca na testowaniu wyników decyzji."
+  }, {
+    a: "testowanie dokumentacji",
+    q: "Kontrola jakości (dokładności, prawidłowości, kompletności itp.) dokumentacji, np. podręcznika użytkownika lub opisu instalacji."
+  }, {
+    a: "testowanie dynamiczne",
+    q: "Testowanie, podczas którego wykonywany jest kod modułu lub systemu."
+  }, {
+    a: "testowanie efektywności",
+    q: "Testowanie mające na celu określenie efektywności oprogramowania."
+  }, {
+    a: "testowanie eksploracyjne",
+    q: "Nieformalna technika projektowania testów, w której tester projektuje testy w czasie, gdy są one wykonywane i wykorzystuje informacje zdobyte podczas testowania do projektowania nowych i lepszych testów. "
+  }, {
+    a: "testowanie funkcjonalne",
+    q: "Testowanie oparte na analizie specyfikacji funkcjonalnej modułu lub systemu."
+  }, {
+    a: "testowanie funkcjonalności",
+    q: "Testowanie mające na celu określenie funkcjonalności oprogramowania."
+  }, {
+    a: "testowanie gruntowne",
+    q: "Podejście do testów, w którym zestaw testowy obejmuje wszystkie kombinacje wartości wejściowych i warunków wstępnych."
+  }, {
+    a: "testowanie integracyjne",
+    q: "Testowanie wykonywane w celu wykrycia defektów w interfejsach i interakcjach pomiędzy modułami lub systemami. "
+  }, {
+    a: "testowanie interfejsu",
+    q: "Testowanie wykonywane w celu wykrycia błędów w interfejsach pomiędzy modułami."
+  }, {
+    a: "testowanie losowe",
+    q: "Czarnoskrzynkowa technika projektowania przypadków testowych, w której przypadki testowe są dobierane na podstawie pseudolosowego algorytmu dopasowanego do profilu operacyjnego. Technika ta jest wykorzystywana do testów wymagań niefunkcjonalnych, takich jak wydajność lub niezawodność."
+  }, {
+    a: "testowanie modułowe",
+    q: "Testowanie pojedynczych modułów oprogramowania. "
+  }, {
+    a: "testowanie niefunkcjonalne",
+    q: "Testowanie atrybutów modułu lub systemu, które nie odnoszą się do jego funkcjonalności, np. niezawodności, efektywności, pielęgnowalności i przenaszalności."
+  }, {
+    a: "testowanie niezawodności",
+    q: "Proces testowania mający na celu określenie niezawodności oprogramowania."
+  }, {
+    a: "testowanie obciążenia",
+    q: "Testowanie, podczas którego system pracuje przy dużej ilości danych."
+  }, {
+    a: "testowanie obciążeniowe",
+    q: "Rodzaj testów, których zadaniem jest pomiar zachowania modułu lub systemu przy zwiększającym się obciążeniu, np. liczbie równolegle pracujących użytkowników i/lub liczbie transakcji, w celu określenia, jakie obciążenie moduł lub system jest w stanie obsłużyć. "
+  }, {
+    a: "testowanie oparte na atakach",
+    q: "Technika testowania oparta na doświadczeniu, która używa ataków usterek do wywoływania awarii, szczególnie awarii zabezpieczeń. "
+  }, {
+    a: "testowanie oparte na ryzyku",
+    q: "Testowanie nastawione na wykrycie i dostarczenie informacji o ryzykach produktowych."
+  }, {
+    a: "testowanie oparte na wymaganiach",
+    q: "Podejście do testów, w którym przypadki testowe są projektowane w oparciu o cele testów i warunki testowe zawarte w wymaganiach np. testy sprawdzające konkretne funkcje lub badające niefunkcjonalne wymagania systemu, takie jak niezawodność lub użyteczność."
+  }, {
+    a: "testowanie pielęgnacyjne",
+    q: "Testowanie zmian we wdrożonym systemie lub testowanie wpływu zmienionego środowiska na wdrożony system."
+  }, {
+    a: "testowanie produkcyjne",
+    q: "Testowanie mające na celu ocenę modułu lub systemu w jego środowisku produkcyjnym. "
+  }, {
+    a: "Testowanie przeciążające",
+    q: "Typ testowania wydajnościowego wykonywany, by określić jak system lub jego moduł pracuje na przewidywanej lub wyspecyfikowanej granicy lub poza nią lub też przy ograniczonym dostępie do pamięci lub serwera."
+  }, {
+    a: "testowanie przejść pomiędzy stanami",
+    q: "Czarnoskrzynkowa technika projektowania przypadków testowych, w której przypadki są projektowane tak, aby sprawdzały dozwolone oraz niedozwolone przejścia między stanami. Patrz także testowanie N-przełączeń."
+  }, {
+    a: "testowanie przenaszalności",
+    q: "Proces testowania mający na celu określenie przenaszalności oprogramowania."
+  }, {
+    a: "testowanie przepływu danych",
+    q: "Białoskrzynkowa metoda projektowania przypadków testowych, w której testy projektowane są w oparciu o analizę par definicja - użycie zmiennych."
+  }, {
+    a: "testowanie przez użytkownika",
+    q: "Testowanie, w którym w ocenę użyteczności modułu lub systemu są zaangażowani rzeczywiści użytkownicy."
+  }, {
+    a: "testowanie regresywne",
+    q: "Ponowne przetestowanie uprzednio testowanego programu po dokonaniu w nim modyfikacji, w celu upewnienia się, że w wyniku zmian nie powstały nowe defekty lub nie ujawniły się defekty w niezmienionej części oprogramowania. Testy takie są przeprowadzane po zmianach oprogramowania lub jego środowiska pracy."
+  }, {
+    a: "testowanie statyczne",
+    q: "Testowanie modułu lub systemu na poziomie specyfikacji lub implementacji bez wykonywania tego oprogramowania, np. przeglądy lub analiza statyczna kodu."
+  }, {
+    a: "testowanie strukturalne",
+    q: "Patrz testowanie białoskrzynkowe"
+  }, {
+    a: "testowanie systemowe",
+    q: "Proces testowania zintegrowanego systemu w celu sprawdzenia jego zgodności z wyspecyfikowanymi wymaganiami."
+  }, {
+    a: "testowanie użyteczności",
+    q: "Testowanie mające na celu określenie, w jakim stopniu oprogramowanie jest zrozumiałe, łatwe do nauczenia, łatwe w użyciu oraz atrakcyjne dla użytkowników w określonych warunkach. "
+  }, {
+    a: "testowanie w oparciu o przypadki użycia",
+    q: "Czarnoskrzynkowa technika projektowania przypadków testowych, w której przypadki testowe są projektowane w ten sposób, by wykonywane były scenariusze użycia."
+  }, {
+    a: "testowanie w oparciu o tablicę decyzyjną",
+    q: "Czarnoskrzynkowa technika projektowania przypadków testowych polegająca na sprawdzeniu działania modułu lub systemu w reakcji na kombinacje warunków wejściowych podanych w tablicy decyzyjnej."
+  }, {
+    a: "testowanie wartości brzegowych",
+    q: "Patrz analiza wartości brzegowych"
+  }, {
+    a: "testowanie wartości negatywnych",
+    q: "Testowanie polegające na próbach podawania wartości, które powinny być odrzucane przez moduł lub system."
+  }, {
+    a: "testowanie warunków",
+    q: "Białoskrzynkowa technika projektowania przypadków testowych polegająca na testowaniu wyniku dla warunków."
+  }, {
+    a: "testowanie współdziałania",
+    q: "Proces testowania w celu określenia współdziałania oprogramowania."
+  }, {
+    a: "testowanie wydajnościowe",
+    q: "Proces testowania mający na celu określenie wydajności oprogramowania. Patrz także testowanie efektywności."
+  }, {
+    a: "testowanie zabezpieczeń",
+    q: "Testowanie mające na celu określenie zabezpieczeń oprogramowania."
+  }, {
+    a: "testowanie zgodności",
+    q: "Proces testowania określający zgodność modułu albo systemu."
+  }, {
+    a: "typ ryzyka",
+    q: "Specyficzna kategoria ryzyka, związana z typem testów, które należy przeprowadzić w taki sposób, aby świadomie je ograniczać i łagodzić, np. ryzyko związane z interfejsem użytkownika może być łagodzone poprzez przeprowadzenie testów użyteczności."
+  }, {
+    a: "typ testów",
+    q: "Grupa czynności testowych nakierowanych na testowanie modułu komponentu lub systemu, skoncentrowanych na specyficznych konkretnych celach, takich jak test funkcjonalny, test użyteczności, test regresywny itp. Typ testów może być użyty na jednym lub na kilku poziomach testów."
+  }, {
+    a: "usterka",
+    q: "Patrz defekt."
+  }, {
+    a: "utrzymanie",
+    q: "Zmiany oprogramowania po wdrożeniu produkcyjnym dokonywane w celu naprawy usterek, poprawy wydajności lub innych atrybutów oprogramowania. Zmiany mogą dotyczyć także przystosowania produktu do zmienionego środowiska. "
+  }, {
+    a: "użyteczność",
+    q: "Zdolność oprogramowania do bycia używanym, zrozumiałym, łatwym w nauce i atrakcyjnym dla użytkownika, gdy oprogramowanie to jest używane w określonych warunkach."
+  }, {
+    a: "walidacja",
+    q: "Sprawdzanie poprawności i dostarczenie obiektywnego dowodu, że produkt procesu wytwarzania oprogramowania spełnia potrzeby i wymagania użytkownika."
+  }, {
+    a: "wartość brzegowa",
+    q: "Wartość wejścia lub wyjścia, która jest na granicy klas równoważności lub jest w najbliższym przyrostowym sąsiedztwie tej granicy. Na przykład wartość minimalna lub maksymalna zakresu."
+  }, {
+    a: "warunek testowy",
+    q: "Element lub zdarzenie modułu lub systemu, który może być zweryfikowany przez jeden lub więcej przypadków testowych, np. funkcja, transakcja, cecha, atrybut jakości lub element struktury."
+  }, {
+    a: "ważność",
+    q: "Stopień wpływu defektu na rozwój lub działanie modułu lub systemu."
+  }, {
+    a: "weryfikacja",
+    q: "Egzaminowanie poprawności i dostarczenie obiektywnego dowodu, że produkt procesu wytwarzania oprogramowania spełnia zdefiniowane wymagania."
+  }, {
+    a: "współczynnik awarii",
+    q: "Stosunek liczby awarii w danej kategorii do określonej jednostki miary, np. awarie na jednostkę czasu, awarie na liczbę transakcji, awarie na liczbę uruchomień komputera."
+  }, {
+    a: "wydajność",
+    q: "Stopień, w jaki system lub moduł, realizuje swoje wyznaczone funkcje w założonych ramach czasu przetwarzania i przepustowości."
+  }, {
+    a: "wykonanie testu",
+    q: "Proces przeprowadzenia testu na module lub systemie, w wyniku którego otrzymujemy rzeczywiste rezultaty."
+  }, {
+    a: "wymaganie funkcjonalne",
+    q: "Wymaganie specyfikujące funkcję, którą moduł lub system musi realizować."
+  }, {
+    a: "wymaganie niefunkcjonalne",
+    q: "Wymaganie, które nie dotyczy funkcjonalności, ale cech oprogramowania takich, jak niezawodność, efektywność, użyteczność, pielęgnowalność i przenaszalność"
+  }, {
+    a: "wymaganie testowalne",
+    q: "Wymaganie, które jest określone przy użyciu pojęć umożliwiających stworzenie projektu testu (a następnie przypadków testowych) i wykonanie testów w celu określenia, czy wymaganie to zostało spełnione."
+  }, {
+    a: "wytwarzanie sterowane testami",
+    q: "Sposób wytwarzania oprogramowania, w którym przypadki testowe są przygotowywane i często automatyzowane zanim powstanie oprogramowanie, które będzie testowane za ich pomocą. Powszechnie stosowany skrót to TDD – od ang. test driven development."
+  }, {
+    a: "zabezpieczenie",
+    q: "Atrybuty oprogramowania określające jego zdolność do zapobiegania nieautoryzowanym przypadkowym lub umyślnym dostępem do programu i do danych."
+  }, {
+    a: "zablokowany przypadek testowy",
+    q: "Przypadek testowy, który nie może zostać wykonany, ponieważ jego warunki wstępne nie mogą zostać osiągnięte."
+  }, {
+    a: "zaliczenie",
+    q: "Test jest uważany za zaliczony, jeśli jego rezultat pasuje do rezultatu oczekiwanego."
+  }, {
+    a: "zarządzanie danymi testowymi",
+    q: "Proces analizy wymagań dla danych testowych, projektowania struktur danych testowych, tworzenia i utrzymywania danych testowych."
+  }, {
+    a: "zarządzanie defektami",
+    q: "Proces składający się z rozpoznania, analizy, prowadzenia działań i likwidacji usterek. Polega on na rejestracji usterek, ich klasyfikacji oraz określaniu wpływu defektów."
+  }, {
+    a: "zarządzanie incydentami",
+    q: "Proces składający się z rozpoznania, analizy, podejmowania działań i rozwiązywania incydentów. Polega on na rejestracji klasyfikacji oraz określaniu wpływu incydentów."
+  }, {
+    a: "zarządzanie jakością",
+    q: "Ogół skoordynowanych czynności mających na celu kierowanie organizacją i kontrolowanie jej pod kątem jakości. Zwykle obejmuje czynności takie jak: zdefiniowanie polityki jakościowej i celów jakościowych, planowanie jakości, kontrolowanie jakości, zapewnienie jakości i poprawa jakości."
+  }, {
+    a: "zarządzanie konfiguracją",
+    q: "Dyscyplina używająca technicznych i administracyjnych metod kierowania i nadzoru aby: określić i udokumentować charakterystyki funkcjonalne i fizyczne elementów konfiguracji, kontrolować zmiany tych charakterystyk, zapisywać i raportować o wykonywaniu zmian i statusie implementacji oraz weryfikować zgodność z wyspecyfikowanymi wymaganiami."
+  }, {
+    a: "zaślepka",
+    q: "Szkieletowa albo specjalna implementacja modułu używana podczas produkcji lub testów innego modułu, który tę zaślepkę wywołuje albo jest w inny sposób od niej zależny. Zaślepka zastępuje wywoływany moduł."
+  }, {
+    a: "zestaw testowy",
+    q: "Ciąg przypadków testowych, w którym warunki wyjściowe z jednego testu używa się jako warunki wejściowe do następnego testu."
+  }, {
+    a: "zgadywanie błędów",
+    q: "Technika projektowania testów, gdzie bazując na doświadczeniu testera przewiduje się, jakie defekty, będące efektem wykonanych pomyłek, mogą być obecne w testowanym module lub systemie i projektuje się testy tak, aby te defekty ujawnić."
+  }, {
+    a: "zgłoszenie defektu",
+    q: "Dokument opisujący usterkę w module lub systemie, która może spowodować nieprawidłowe działanie jego wymaganych funkcji."
+  }, {
+    a: "złożoność",
+    q: "Stopień trudności do nauczenia, utrzymania i weryfikacji, według którego moduł lub system i/lub jego wewnętrzna struktura został (została) zaprojektowany(a)."
+  }, {
+    a: "zmiana stanu",
+    q: "Przejście pomiędzy dwoma stanami systemu lub modułu."
+  }, {
+    a: "zmienna",
+    q: "Element pamięci komputera, który jest dostępny w programie poprzez swoja nazwę."
+  }, {
+    a: "zwinne wytwarzanie oprogramowania",
+    q: "Grupa metodyk wytwarzania oprogramowania oparta na iteracyjnym, przyrostowym modelu wytwarzania oprogramowania, w których wymagania i rozwiązania ewoluują poprzez współpracę w ramach samoorganizujących się, realizujących wiele funkcji zespołów."
+  }]
+});
+
+/***/ }),
+
 /***/ "./src/components/1000Words/AnswerArchive.jsx":
 /*!****************************************************!*\
   !*** ./src/components/1000Words/AnswerArchive.jsx ***!
@@ -4365,9 +5271,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n  margin: 50px auto 0;\n  opacity: 0;\n  transition: opacity .2s;\n  width: 80%;\n\n  &.visible {\n    opacity: 1;\n  }\n"]);
 
@@ -4392,9 +5296,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
-var ListStyled = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].ul(_templateObject());
-var SectionStyled = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].section(_templateObject2());
+var ListStyled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].ul(_templateObject());
+var SectionStyled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section(_templateObject2());
 
 var AnswerArchive = function AnswerArchive(_ref) {
   var archive = _ref.archive;
@@ -4456,13 +5359,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Renderer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Renderer */ "./src/components/1000Words/Renderer.jsx");
 /* harmony import */ var _assets_ger1000__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/assets/ger1000 */ "./src/assets/ger1000.js");
 /* harmony import */ var _assets_eng1000__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/assets/eng1000 */ "./src/assets/eng1000.js");
-/* harmony import */ var _assets_colors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/assets/colors */ "./src/assets/colors.js");
-/* harmony import */ var _AnswerArchive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AnswerArchive */ "./src/components/1000Words/AnswerArchive.jsx");
-/* harmony import */ var _services_speachSynthesis__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ~/services/speachSynthesis */ "./src/services/speachSynthesis.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
-/* harmony import */ var _utils_converters__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ~/utils/converters */ "./src/utils/converters.js");
-/* harmony import */ var styled_system__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! styled-system */ "./node_modules/styled-system/dist/index.esm.js");
+/* harmony import */ var _assets_slownikTestera__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/assets/slownikTestera */ "./src/assets/slownikTestera.js");
+/* harmony import */ var _assets_colors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~/assets/colors */ "./src/assets/colors.js");
+/* harmony import */ var _AnswerArchive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AnswerArchive */ "./src/components/1000Words/AnswerArchive.jsx");
+/* harmony import */ var _services_speachSynthesis__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ~/services/speachSynthesis */ "./src/services/speachSynthesis.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
+/* harmony import */ var _utils_converters__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ~/utils/converters */ "./src/utils/converters.js");
+/* harmony import */ var styled_system__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! styled-system */ "./node_modules/styled-system/dist/index.esm.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -4527,9 +5431,10 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+ // const areEqual = (a, b) => a.trim() === b.trim();
 
-var areEqual = function areEqual(a, b) {
-  return a.trim() === b.trim();
+var areEqualCaseInsensitive = function areEqualCaseInsensitive(a, b) {
+  return a.trim().toLowerCase() === b.trim().toLowerCase();
 };
 
 var getRecognizedText = function getRecognizedText(evt) {
@@ -4544,11 +5449,11 @@ var getMaxLengthOfAnswer = function getMaxLengthOfAnswer(list) {
   }, 0);
 };
 
-var OverlayStyled = styled_components__WEBPACK_IMPORTED_MODULE_8__["default"].div(_templateObject(), function (props) {
+var OverlayStyled = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].div(_templateObject(), function (props) {
   return props.show ? "block" : "none";
 });
-var TopBarStyled = styled_components__WEBPACK_IMPORTED_MODULE_8__["default"].nav(_templateObject2());
-var TopBarPlaceholder = styled_components__WEBPACK_IMPORTED_MODULE_8__["default"].div(_templateObject3());
+var TopBarStyled = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].nav(_templateObject2());
+var TopBarPlaceholder = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].div(_templateObject3());
 
 var GameController =
 /*#__PURE__*/
@@ -4580,7 +5485,7 @@ function (_React$PureComponent) {
       anyWasIncorrect: false,
       list: [],
       config: {
-        playOnNewQuestion: true,
+        playOnNewQuestion: false,
         acceptOnCorrect: true
       }
     });
@@ -4652,7 +5557,7 @@ function (_React$PureComponent) {
 
         var convertedAnswer = _this.state.currentDataset.answerConverter(answer);
 
-        _this.state.config.playOnNewQuestion && Object(_services_speachSynthesis__WEBPACK_IMPORTED_MODULE_7__["speak"])(convertedAnswer.value);
+        _this.state.config.playOnNewQuestion && Object(_services_speachSynthesis__WEBPACK_IMPORTED_MODULE_8__["speak"])(convertedAnswer.value);
         return {
           answer: convertedAnswer,
           currentIdx: currentIdx,
@@ -4676,8 +5581,8 @@ function (_React$PureComponent) {
       if (key === 'Escape') {
         return _this.giveUp();
       } else if (key === 'Enter') {
-        _this.pushToMemStack(value && areEqual(value, _this.state.answer.value));
-      } else if (_this.state.config.acceptOnCorrect && value && areEqual(value, _this.state.answer.value)) {
+        _this.pushToMemStack(value && areEqualCaseInsensitive(value, _this.state.answer.value));
+      } else if (_this.state.config.acceptOnCorrect && value && areEqualCaseInsensitive(value, _this.state.answer.value)) {
         _this.handleHit(true); // } else if (key && key.startsWith('Arrow')) {
         //   return;
 
@@ -4799,20 +5704,20 @@ function (_React$PureComponent) {
         style: {
           textAlign: "center"
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Heading"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_10__["Heading"], {
         style: {
           display: "inline",
           lineHeight: "80px",
           marginRight: "20px"
         }
-      }, "Done!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Button"], {
+      }, "Done!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         style: {
           verticalAlign: "super"
         },
         onClick: _this.reload,
         variantColor: "teal",
         size: "md"
-      }, "Reload"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["Button"], {
+      }, "Reload"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_10__["Button"], {
         style: {
           verticalAlign: "super"
         },
@@ -4848,7 +5753,7 @@ function (_React$PureComponent) {
         disabled: false,
         callback: _this.giveUp,
         variantColor: "red"
-      }]), _React$createElement3)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AnswerArchive__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }]), _React$createElement3)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AnswerArchive__WEBPACK_IMPORTED_MODULE_7__["default"], {
         archive: _this.state.memStack
       }));
     });
@@ -4864,20 +5769,25 @@ GameController.propTypes = {
 };
 GameController.defaultProps = {
   datasets: [{
+    label: "Slownik Testera",
+    data: _assets_slownikTestera__WEBPACK_IMPORTED_MODULE_5__["default"],
+    answerConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_11__["convertToAnswerFormat"],
+    questionConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_11__["convertToQuestionFormat"]
+  }, {
     label: "English Colors",
-    data: _assets_colors__WEBPACK_IMPORTED_MODULE_5__["default"],
-    answerConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_10__["convertToAnswerFormat"],
-    questionConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_10__["convertToColorQuestionFormat"]
+    data: _assets_colors__WEBPACK_IMPORTED_MODULE_6__["default"],
+    answerConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_11__["convertToAnswerFormat"],
+    questionConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_11__["convertToColorQuestionFormat"]
   }, {
     label: "1000 Words English",
     data: _assets_eng1000__WEBPACK_IMPORTED_MODULE_4__["default"],
-    answerConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_10__["convertToAnswerFormat"],
-    questionConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_10__["convertToQuestionFormat"]
+    answerConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_11__["convertToAnswerFormat"],
+    questionConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_11__["convertToQuestionFormat"]
   }, {
     label: "1000 Words German",
     data: _assets_ger1000__WEBPACK_IMPORTED_MODULE_3__["default"],
-    answerConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_10__["convertToAnswerFormat"],
-    questionConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_10__["convertToQuestionFormat"]
+    answerConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_11__["convertToAnswerFormat"],
+    questionConverter: _utils_converters__WEBPACK_IMPORTED_MODULE_11__["convertToQuestionFormat"]
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (GameController);
@@ -4985,7 +5895,8 @@ var Renderer = function Renderer(_ref) {
       display: "flex",
       textAlign: "center",
       alignItems: "center",
-      justifyContent: "center"
+      justifyContent: "center",
+      padding: "0 20px"
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: {
@@ -5063,12 +5974,9 @@ Renderer.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _GameController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GameController */ "./src/components/1000Words/GameController.jsx");
+/* harmony import */ var _GameController__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GameController */ "./src/components/1000Words/GameController.jsx");
 
-
-/* harmony default export */ __webpack_exports__["default"] = (_GameController__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_GameController__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
@@ -5083,9 +5991,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InputStyled", function() { return InputStyled; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hints", function() { return Hints; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n  margin-top: 40px;\n\n  & > * + * {\n    margin-left: 10px;\n  }\n"]);
 
@@ -5109,11 +6015,10 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-
-var InputStyled = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input(_templateObject(), function (props) {
+var InputStyled = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].input(_templateObject(), function (props) {
   return props.shouldApplyMask ? 'letter-spacing: 5px' : '';
 });
-var Hints = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].aside(_templateObject2());
+var Hints = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].aside(_templateObject2());
 
 /***/ }),
 
