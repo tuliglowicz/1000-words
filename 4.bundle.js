@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{73:function(n,e,r){"use strict";r.r(e);var t=r(0),u=r.n(t);r(5);e.default=function(){return u.a.createElement("b",null,"Irregular Verbs")}}}]);
-//# sourceMappingURL=4.bundle.js.map

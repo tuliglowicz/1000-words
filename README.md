@@ -1,1 +1,0 @@
-# tulliglowicz.github.io
